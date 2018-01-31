@@ -1,135 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8acf72f3-b387-4a3f-af5f-d508ed99cfbe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/classes/br/com/middleware/application/Application.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/classes/br/com/middleware/application/config/JsMiddlewareApplicationConfig$SmartLocaleResolver.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/classes/br/com/middleware/application/config/JsMiddlewareApplicationConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/js-middleware-application.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/js-middleware-application.jar.original" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/target/js-middleware-integration-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/classes/br/com/middleware/model/BaseMapper$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/classes/br/com/middleware/model/BaseMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/classes/br/com/middleware/model/process/Test.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/classes/br/com/middleware/model/to/TestTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/js-middleware-model-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/classes/br/com/middlewareservice/api/ITestService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/js-middleware-service-api-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/classes/br/com/middleware/service/impl/TestService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/js-middleware-service-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/classes/br/com/middleware/ws/api/ITestController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/classes/br/com/middleware/ws/api/commons/HttpResponseWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/classes/br/com/middleware/ws/api/response/TestResponse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/js-middleware-ws-api-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/classes/br/com/middleware/ws/TestController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/js-middleware-ws-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_core_1_4_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_servlet_1_4_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_websockets_jsr_1_4_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_27.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_27.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_27.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_27.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_el_3_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_2_spec_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_websocket_jboss_websocket_api_1_1_spec_1_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_3_8_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_8_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_22.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_undertow_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_3_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_1_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/js-middleware-application.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/src/main/java/br/com/middleware/application/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/src/main/java/br/com/middleware/application/config/JsMiddlewareApplicationConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-application/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/js-middleware-integration.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-integration/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/js-middleware-model.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/src/main/java/br/com/middleware/model/BaseMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/src/main/java/br/com/middleware/model/process/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/src/main/java/br/com/middleware/model/to/TestTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/js-middleware-service-api.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/src/main/java/br/com/middlewareservice/api/ITestService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/js-middleware-service.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/src/main/java/br/com/middleware/service/impl/TestService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/js-middleware-ws-api.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/src/main/java/br/com/middleware/ws/api/ITestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/src/main/java/br/com/middleware/ws/api/commons/HttpResponseWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/src/main/java/br/com/middleware/ws/api/response/TestResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/js-middleware-ws.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/src/main/java/br/com/middleware/ws/TestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js-middleware-ws/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.old" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-    </list>
+    <list default="true" id="8acf72f3-b387-4a3f-af5f-d508ed99cfbe" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/js-middleware-ws-api/target/" />
@@ -607,12 +479,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517402590840</updated>
       <workItem from="1517402592737" duration="21965000" />
-      <workItem from="1517432435864" duration="744000" />
+      <workItem from="1517432435864" duration="851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22709000" />
+    <option name="totallyTimeSpent" value="22816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1372" height="748" extended-state="6" />
