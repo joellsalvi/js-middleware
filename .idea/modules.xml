@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/js-middleware.iml" filepath="$PROJECT_DIR$/js-middleware.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-application/js-middleware-application.iml" filepath="$PROJECT_DIR$/js-middleware-application/js-middleware-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-integration/js-middleware-integration.iml" filepath="$PROJECT_DIR$/js-middleware-integration/js-middleware-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-model/js-middleware-model.iml" filepath="$PROJECT_DIR$/js-middleware-model/js-middleware-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-service/js-middleware-service.iml" filepath="$PROJECT_DIR$/js-middleware-service/js-middleware-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-service-api/js-middleware-service-api.iml" filepath="$PROJECT_DIR$/js-middleware-service-api/js-middleware-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-ws/js-middleware-ws.iml" filepath="$PROJECT_DIR$/js-middleware-ws/js-middleware-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js-middleware-ws-api/js-middleware-ws-api.iml" filepath="$PROJECT_DIR$/js-middleware-ws-api/js-middleware-ws-api.iml" />
+    </modules>
+  </component>
+</project>

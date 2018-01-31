@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com</groupId>
+    <artifactId>js-middleware</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>JS Middleware</name>
+
+    <modules>
+        <module>js-middleware-ws</module>
+        <module>js-middleware-ws-api</module>
+        <module>js-middleware-service</module>
+        <module>js-middleware-service-api</module>
+        <module>js-middleware-model</module>
+        <module>js-middleware-application</module>
+        <module>js-middleware-integration</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <spring-version>5.0.3.RELEASE</spring-version>
+        <spring-web-version>4.1.6.RELEASE</spring-web-version>
+        <spring-boot-version>1.5.10.RELEASE</spring-boot-version>
+        <js-middleware-version>1.0-SNAPSHOT</js-middleware-version>
+        <jackson-version>2.9.4</jackson-version>
+        <org-apache-commons>3.7</org-apache-commons>
+
+        <resource.directory>src/main/resources</resource.directory>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</connection>
+        <url>https://joelsalvi@bitbucket.org/joelsalvi/js-middleware</url>
+        <developerConnection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org-apache-commons}</version>
+            </dependency>
+
+            <!-- spring -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-web-version}</version>
+            </dependency>
+
+            <!-- spring-boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-undertow</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <!-- JACKSON -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+
+            <!-- MODULES -->
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-application</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-model</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-integration</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-service</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-service-api</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-ws</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.com</groupId>
+                <artifactId>js-middleware-ws-api</artifactId>
+                <version>${js-middleware-version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <providerImplementations>
+                        <git>jgit</git>
+                    </providerImplementations>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>1.9.5</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

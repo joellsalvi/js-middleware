@@ -1,0 +1,4 @@
+br/com/middleware/model/process/Test.class
+br/com/middleware/model/to/TestTO.class
+br/com/middleware/model/BaseMapper.class
+br/com/middleware/model/BaseMapper$1.class

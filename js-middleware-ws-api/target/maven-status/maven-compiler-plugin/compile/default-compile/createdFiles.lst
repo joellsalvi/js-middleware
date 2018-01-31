@@ -1,0 +1,3 @@
+br/com/middleware/ws/api/ITestController.class
+br/com/middleware/ws/api/commons/HttpResponseWrapper.class
+br/com/middleware/ws/api/response/TestResponse.class
