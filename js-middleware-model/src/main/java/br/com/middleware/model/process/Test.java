@@ -2,15 +2,27 @@ package br.com.middleware.model.process;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Created by joel on 31/01/18.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Test {
 
     private Long id;
     private String name;
     private String lastName;
     private LocalDate birthday;
+
+    public Test(){}
+
+    public Test(Long id, String name, String lastName, LocalDate birthday) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.birthday = birthday;
+    }
 
     public Long getId() {
         return id;

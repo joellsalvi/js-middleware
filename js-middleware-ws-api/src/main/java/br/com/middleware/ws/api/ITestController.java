@@ -17,8 +17,9 @@ import br.com.middleware.ws.api.response.TestResponse;
 @RequestMapping("/test")
 public interface ITestController {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/{id}", produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, value = "/{key}",
+            consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    HttpResponseWrapper<TestResponse> testarController(@PathVariable("id") Long id, @RequestBody Test test);
+    HttpResponseWrapper<TestResponse> testarController(@PathVariable("key") Long key, @RequestBody Test test);
 
 }

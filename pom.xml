@@ -37,12 +37,12 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
-    <!--<scm>-->
-        <!--<connection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</connection>-->
-        <!--<url>https://joelsalvi@bitbucket.org/joelsalvi/js-middleware</url>-->
-        <!--<developerConnection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</developerConnection>-->
-        <!--<tag>HEAD</tag>-->
-    <!--</scm>-->
+    <scm>
+        <connection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</connection>
+        <url>https://joelsalvi@bitbucket.org/joelsalvi/js-middleware</url>
+        <developerConnection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencyManagement>
         <dependencies>
@@ -104,6 +104,21 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
 
             <!-- MODULES -->
             <dependency>
@@ -156,13 +171,13 @@
                         <git>jgit</git>
                     </providerImplementations>
                 </configuration>
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.apache.maven.scm</groupId>-->
-                        <!--<artifactId>maven-scm-provider-jgit</artifactId>-->
-                        <!--<version>1.9.5</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>1.9.5</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

@@ -1,6 +1,8 @@
 package br.com.middleware.ws;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,8 +29,8 @@ public class TestController implements ITestController {
     }
 
     @Override
-    public HttpResponseWrapper<TestResponse> testarController(Long id, Test test) {
-        TestResponse testResponse = objectMapper.convertValue(testService.testar(id, test), TestResponse.class);
+    public HttpResponseWrapper<TestResponse> testarController(Long key, @RequestBody Test test) {
+        TestResponse testResponse = objectMapper.convertValue(testService.testar(key, test), TestResponse.class);
         return new HttpResponseWrapper(testResponse);
     }
 }
