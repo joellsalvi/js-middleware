@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/js-middleware.iml" filepath="$PROJECT_DIR$/js-middleware.iml" />
-      <module fileurl="file://$PROJECT_DIR$/js-middleware.iml" filepath="$PROJECT_DIR$/js-middleware.iml" />
       <module fileurl="file://$PROJECT_DIR$/js-middleware-application/js-middleware-application.iml" filepath="$PROJECT_DIR$/js-middleware-application/js-middleware-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/js-middleware-integration/js-middleware-integration.iml" filepath="$PROJECT_DIR$/js-middleware-integration/js-middleware-integration.iml" />
       <module fileurl="file://$PROJECT_DIR$/js-middleware-model/js-middleware-model.iml" filepath="$PROJECT_DIR$/js-middleware-model/js-middleware-model.iml" />
