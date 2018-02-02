@@ -1,5 +1,6 @@
 package br.com.middleware.model;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -29,6 +30,10 @@ public interface BaseMapper {
 
     default String map(OffsetDateTime offsetDateTime) {
         return offsetDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ"));
+    }
+
+    default String map(LocalDateTime localDateTime) {
+        return localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ"));
     }
 
 }

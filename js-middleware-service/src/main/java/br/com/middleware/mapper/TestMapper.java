@@ -7,11 +7,11 @@ import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.TestTO;
 
 /**
- * Created by zup134 on 02/02/18.
+ * Created by joel on 02/02/18.
  */
 @Mapper(componentModel = "spring")
-public interface TestMapper extends BaseMapper {
+public abstract class TestMapper implements BaseMapper {
 
-    TestTO convertValue(Test test);
+    public abstract TestTO convertValue(Test test);
 
 }

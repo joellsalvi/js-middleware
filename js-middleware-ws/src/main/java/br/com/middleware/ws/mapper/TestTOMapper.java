@@ -8,15 +8,15 @@ import br.com.middleware.model.to.TestTO;
 import br.com.middleware.ws.api.response.TestResponse;
 
 /**
- * Created by zup134 on 02/02/18.
+ * Created by joel on 02/02/18.
  */
 @Mapper(componentModel = "spring")
 public abstract class TestTOMapper implements BaseMapper {
 
-    @Mapping(expression = "java(resolveName(to))", target = "fullName")
+    @Mapping(expression = "java(solveName(to))", target = "fullName")
     public abstract TestResponse convertValue(TestTO to);
 
-    protected String resolveName(TestTO to) {
+    protected String solveName(TestTO to) {
         return to.getName() + " " + to.getLastName();
     }
 

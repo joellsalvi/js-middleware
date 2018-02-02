@@ -1,15 +1,20 @@
 package br.com.middleware.ws.api.response;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  * Created by joel on 31/01/18.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TestResponse {
 
     private Long id;
     private String fullName;
-    private LocalDate birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime birthday;
 
     public TestResponse() {
     }
@@ -30,11 +35,11 @@ public class TestResponse {
         this.fullName = fullName;
     }
 
-    public LocalDate getBirthday() {
+    public LocalDateTime getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
 }

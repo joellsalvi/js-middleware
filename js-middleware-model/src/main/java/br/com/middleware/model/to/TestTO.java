@@ -1,6 +1,6 @@
 package br.com.middleware.model.to;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Created by joel on 31/01/18.
@@ -10,7 +10,8 @@ public class TestTO {
     private Long id;
     private String name;
     private String lastName;
-    private LocalDate birthday;
+    private LocalDateTime created;
+    private LocalDateTime birthday;
 
     public TestTO() {
     }
@@ -39,11 +40,19 @@ public class TestTO {
         this.lastName = lastName;
     }
 
-    public LocalDate getBirthday() {
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public LocalDateTime getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
 }
