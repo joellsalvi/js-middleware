@@ -12,6 +12,9 @@ public class TestTO {
     private String lastName;
     private LocalDate birthday;
 
+    public TestTO() {
+    }
+
     public Long getId() {
         return id;
     }

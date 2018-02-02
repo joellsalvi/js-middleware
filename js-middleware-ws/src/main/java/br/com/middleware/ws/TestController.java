@@ -1,13 +1,11 @@
 package br.com.middleware.ws;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import br.com.middleware.model.process.Test;
+import br.com.middleware.ws.mapper.TestTOMapper;
 import br.com.middleware.ws.api.commons.HttpResponseWrapper;
 import br.com.middlewareservice.api.ITestService;
 import br.com.middleware.ws.api.ITestController;
@@ -20,17 +18,17 @@ import br.com.middleware.ws.api.response.TestResponse;
 public class TestController implements ITestController {
 
     private ITestService testService;
-    private ObjectMapper objectMapper;
+    private TestTOMapper testTOMapper;
 
     @Autowired
-    public TestController(ITestService testService, ObjectMapper objectMapper) {
+    public TestController(ITestService testService, TestTOMapper testTOMapper) {
         this.testService = testService;
-        this.objectMapper = objectMapper;
+        this.testTOMapper = testTOMapper;
     }
 
     @Override
     public HttpResponseWrapper<TestResponse> testarController(Long key, @RequestBody Test test) {
-        TestResponse testResponse = objectMapper.convertValue(testService.testar(key, test), TestResponse.class);
+        TestResponse testResponse = testTOMapper.convertValue(testService.testar(key, test));
         return new HttpResponseWrapper(testResponse);
     }
 }

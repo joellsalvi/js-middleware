@@ -1,1 +1,4 @@
-br/com/middleware/service/impl/TestService.class
+br/com/middleware/mapper/TestMapper.class
+br/com/middleware/service/config/ServiceConfig.class
+br/com/middleware/service/TestService.class
+br/com/middleware/mapper/TestMapperImpl.class

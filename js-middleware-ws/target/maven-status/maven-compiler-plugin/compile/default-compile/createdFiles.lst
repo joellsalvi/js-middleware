@@ -1,1 +1,3 @@
 br/com/middleware/ws/TestController.class
+br/com/middleware/ws/mapper/TestTOMapperImpl.class
+br/com/middleware/ws/mapper/TestTOMapper.class

@@ -19,6 +19,8 @@
     <orderEntry type="module" module-name="js-middleware-ws" />
     <orderEntry type="module" module-name="js-middleware-ws-api" />
     <orderEntry type="module" module-name="js-middleware-model" />
+    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct-jdk8:1.2.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct-processor:1.2.0.Final" level="project" />
     <orderEntry type="module" module-name="js-middleware-service" />
     <orderEntry type="module" module-name="js-middleware-service-api" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.3.RELEASE" level="project" />

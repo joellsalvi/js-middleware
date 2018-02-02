@@ -8,18 +8,10 @@ import java.time.LocalDate;
 public class TestResponse {
 
     private Long id;
-    private String name;
-    private String lastName;
+    private String fullName;
     private LocalDate birthday;
 
     public TestResponse() {
-    }
-
-    public TestResponse(Long id, String name, String lastName, LocalDate birthday) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -30,20 +22,12 @@ public class TestResponse {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public LocalDate getBirthday() {

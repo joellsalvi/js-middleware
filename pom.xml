@@ -30,6 +30,7 @@
         <js-middleware-version>1.0-SNAPSHOT</js-middleware-version>
         <jackson-version>2.9.4</jackson-version>
         <org-apache-commons>3.7</org-apache-commons>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
 
         <resource.directory>src/main/resources</resource.directory>
 
@@ -155,6 +156,18 @@
                 <groupId>br.com</groupId>
                 <artifactId>js-middleware-ws-api</artifactId>
                 <version>${js-middleware-version}</version>
+            </dependency>
+
+            <!-- MapStruct -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
 
         </dependencies>
