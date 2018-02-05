@@ -31,11 +31,17 @@
         <jackson-version>2.9.4</jackson-version>
         <org-apache-commons>3.7</org-apache-commons>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
+        <github-openfeign>9.5.1</github-openfeign>
+        <apache.commons-lang.version>3.6</apache.commons-lang.version>
+        <apache.commons-io.version>2.6</apache.commons-io.version>
+        <logger.version>2.10.0</logger.version>
+        <feign.version>9.5.0</feign.version>
 
         <resource.directory>src/main/resources</resource.directory>
 
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <kotlin.version>1.2.21</kotlin.version>
     </properties>
 
     <scm>
@@ -48,7 +54,12 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <!-- Apache dependencies -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${apache.commons-io.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -170,8 +181,53 @@
                 <version>${mapstruct.version}</version>
             </dependency>
 
+            <!-- github.openfeign -->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-core</artifactId>
+                <version>${github-openfeign}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-jackson</artifactId>
+                <version>${github-openfeign}</version>
+            </dependency>
+
+            <!-- Required to use PATCH -->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+
+            <!-- LOGGER -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${logger.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jre8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -191,6 +247,27 @@
                         <version>1.9.5</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

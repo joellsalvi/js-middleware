@@ -12,6 +12,7 @@ public class TestTO {
     private String lastName;
     private LocalDateTime created;
     private LocalDateTime birthday;
+    private AddressTO address;
 
     public TestTO() {
     }
@@ -54,5 +55,13 @@ public class TestTO {
 
     public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
+    }
+
+    public AddressTO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressTO address) {
+        this.address = address;
     }
 }

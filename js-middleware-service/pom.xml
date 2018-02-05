@@ -13,16 +13,21 @@
 
     <dependencies>
 
+        <!-- Modules -->
         <dependency>
             <groupId>br.com</groupId>
             <artifactId>js-middleware-service-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>br.com</groupId>
+            <artifactId>js-middleware-integration</artifactId>
+        </dependency>
 
+        <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

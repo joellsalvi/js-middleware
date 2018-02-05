@@ -8,6 +8,6 @@ import br.com.middleware.model.to.TestTO;
  */
 public interface ITestService {
 
-    TestTO testar(Long id, Test test);
+    TestTO testar(String cep, Test test);
 
 }

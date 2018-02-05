@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
  */
 @Configuration
 @ComponentScan("br.com.middleware")
+@ImportResource("classpath:application.properties")
 public class JsMiddlewareApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Bean

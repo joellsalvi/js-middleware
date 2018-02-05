@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import br.com.middleware.model.to.AddressTO;
+
 /**
  * Created by joel on 31/01/18.
  */
@@ -15,6 +17,7 @@ public class TestResponse {
     private String fullName;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime birthday;
+    private AddressTO address;
 
     public TestResponse() {
     }
@@ -41,5 +44,13 @@ public class TestResponse {
 
     public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
+    }
+
+    public AddressTO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressTO address) {
+        this.address = address;
     }
 }

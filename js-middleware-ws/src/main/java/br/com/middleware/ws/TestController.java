@@ -27,8 +27,8 @@ public class TestController implements ITestController {
     }
 
     @Override
-    public HttpResponseWrapper<TestResponse> testarController(Long key, @RequestBody Test test) {
-        TestResponse testResponse = testTOMapper.convertValue(testService.testar(key, test));
+    public HttpResponseWrapper<TestResponse> testarController(String cep, @RequestBody Test test) {
+        TestResponse testResponse = testTOMapper.convertValue(testService.testar(cep, test));
         return new HttpResponseWrapper(testResponse);
     }
 }
