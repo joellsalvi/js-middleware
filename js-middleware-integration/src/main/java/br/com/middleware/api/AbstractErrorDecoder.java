@@ -3,8 +3,8 @@ package br.com.middleware.api;
 import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import br.com.middleware.exception.BadRequestIntegrationException;
 import br.com.middleware.exception.BusinessIntegrationException;

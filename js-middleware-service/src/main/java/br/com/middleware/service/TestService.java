@@ -3,7 +3,6 @@ package br.com.middleware.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.middleware.api.address.response.AddressResponse;
 import br.com.middleware.api.address.widenet.ApiWideNet;
 import br.com.middleware.mapper.AddressMapper;
 import br.com.middleware.mapper.TestMapper;
@@ -19,9 +18,7 @@ import br.com.middlewareservice.api.ITestService;
 public class TestService implements ITestService {
 
     private TestMapper testMapper;
-
     private AddressMapper addressMapper;
-
     private ApiWideNet apiWideNet;
 
     @Autowired
