@@ -17,17 +17,12 @@ import br.com.middlewareservice.api.ITestService;
 @Service
 public class TestService implements ITestService {
 
-    private TestMapper testMapper;
-    private AddressMapper addressMapper;
-    private ApiWideNet apiWideNet;
-
     @Autowired
-    public TestService(TestMapper testMapper, AddressMapper addressMapper,
-            ApiWideNet apiWideNet) {
-        this.testMapper = testMapper;
-        this.addressMapper = addressMapper;
-        this.apiWideNet = apiWideNet;
-    }
+    private TestMapper testMapper;
+    @Autowired
+    private AddressMapper addressMapper;
+    @Autowired
+    private ApiWideNet apiWideNet;
 
     public TestTO testar(String cep, Test test) {
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));

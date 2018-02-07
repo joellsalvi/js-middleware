@@ -17,14 +17,10 @@ import br.com.middleware.ws.api.response.TestResponse;
 @RestController
 public class TestController implements ITestController {
 
-    private ITestService testService;
-    private TestTOMapper testTOMapper;
-
     @Autowired
-    public TestController(ITestService testService, TestTOMapper testTOMapper) {
-        this.testService = testService;
-        this.testTOMapper = testTOMapper;
-    }
+    private ITestService testService;
+    @Autowired
+    private TestTOMapper testTOMapper;
 
     @Override
     public HttpResponseWrapper<TestResponse> testarController(String cep, @RequestBody Test test) {

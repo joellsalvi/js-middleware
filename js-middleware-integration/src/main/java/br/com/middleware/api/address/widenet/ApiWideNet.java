@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.com.middleware.api.address.response.AddressResponse;
+import feign.RequestLine;
 
 /**
  * Created by zup134 on 05/02/18.
@@ -15,7 +16,7 @@ import br.com.middleware.api.address.response.AddressResponse;
 @Qualifier("ApiWideNet")
 public interface ApiWideNet {
 
-    @RequestMapping( method = RequestMethod.GET, value = "/{cep}.json")
+    @RequestLine("GET /{cep}.json")
     AddressResponse getAddressByCep(@PathVariable("cep") String cep);
 
 }
