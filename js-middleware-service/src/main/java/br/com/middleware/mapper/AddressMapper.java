@@ -2,7 +2,7 @@ package br.com.middleware.mapper;
 
 import org.mapstruct.Mapper;
 
-import br.com.middleware.api.address.response.AddressResponse;
+import br.com.middleware.api.address.widenet.response.WideNetAddressResponse;
 import br.com.middleware.model.BaseMapper;
 import br.com.middleware.model.to.AddressTO;
 
@@ -12,6 +12,6 @@ import br.com.middleware.model.to.AddressTO;
 @Mapper(componentModel = "spring")
 public interface AddressMapper extends BaseMapper {
 
-    AddressTO from(AddressResponse addressResponse);
+    AddressTO from(WideNetAddressResponse wideNetAddressResponse);
 
 }

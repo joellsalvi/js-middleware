@@ -1,4 +1,4 @@
-package br.com.middleware.api.address.response;
+package br.com.middleware.api.address.widenet.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * Created by zup134 on 05/02/18.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AddressResponse {
+public class WideNetAddressResponse {
 
     private String status;
     private String code;
@@ -15,9 +15,9 @@ public class AddressResponse {
     private String district;
     private String address;
 
-    public AddressResponse(){}
+    public WideNetAddressResponse(){}
 
-    public AddressResponse(String status, String code, String state, String city, String district, String address) {
+    public WideNetAddressResponse(String status, String code, String state, String city, String district, String address) {
         this.status = status;
         this.code = code;
         this.state = state;

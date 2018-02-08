@@ -67,7 +67,7 @@
     <orderEntry type="module" module-name="js-middleware-service" />
     <orderEntry type="module" module-name="js-middleware-service-api" />
     <orderEntry type="module" module-name="js-middleware-integration" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-netflix-core:1.3.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-netflix-core:1.3.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:1.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:4.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:1.3.1.RELEASE" level="project" />
