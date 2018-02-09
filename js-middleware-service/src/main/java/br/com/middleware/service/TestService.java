@@ -3,6 +3,7 @@ package br.com.middleware.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.middleware.api.address.viacep.ApiViaCep;
 import br.com.middleware.api.address.widenet.ApiWideNet;
 import br.com.middleware.mapper.AddressMapper;
 import br.com.middleware.mapper.TestMapper;
@@ -23,9 +24,16 @@ public class TestService implements ITestService {
     private AddressMapper addressMapper;
     @Autowired
     private ApiWideNet apiWideNet;
+    @Autowired
+    private ApiViaCep apiViaCep;
 
-    public TestTO testar(String cep, Test test) {
+    public TestTO testWideNet(String cep, Test test) {
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));
+        return testMapper.convertValue(test, addressTO);
+    }
+
+    public TestTO testViaCep(String cep, Test test) {
+        AddressTO addressTO = addressMapper.from(apiViaCep.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);
     }
 

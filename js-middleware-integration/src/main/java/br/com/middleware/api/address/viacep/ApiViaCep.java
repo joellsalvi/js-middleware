@@ -5,6 +5,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import br.com.middleware.api.address.viacep.response.ViaCepAddressResponse;
+import feign.Param;
 import feign.RequestLine;
 
 /**
@@ -15,6 +16,6 @@ import feign.RequestLine;
 public interface ApiViaCep {
 
     @RequestLine("GET /{cep}/json/")
-    ViaCepAddressResponse getAddress(@PathVariable("cep") String cep);
+    ViaCepAddressResponse getAddressByCep(@Param("cep") String cep);
 
 }

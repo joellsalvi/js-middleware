@@ -23,8 +23,14 @@ public class TestController implements ITestController {
     private TestTOMapper testTOMapper;
 
     @Override
-    public HttpResponseWrapper<TestResponse> testarController(String cep, @RequestBody Test test) {
-        TestResponse testResponse = testTOMapper.convertValue(testService.testar(cep, test));
+    public HttpResponseWrapper<TestResponse> testWideNet(String cep, @RequestBody Test test) {
+        TestResponse testResponse = testTOMapper.convertValue(testService.testWideNet(cep, test));
+        return new HttpResponseWrapper(testResponse);
+    }
+
+    @Override
+    public HttpResponseWrapper<TestResponse> testViaCep(String cep, @RequestBody Test test) {
+        TestResponse testResponse = testTOMapper.convertValue(testService.testViaCep(cep, test));
         return new HttpResponseWrapper(testResponse);
     }
 }

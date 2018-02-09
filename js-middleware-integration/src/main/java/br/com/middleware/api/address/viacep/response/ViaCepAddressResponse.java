@@ -1,84 +1,95 @@
 package br.com.middleware.api.address.viacep.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by zup134 on 08/02/18.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ViaCepAddressResponse {
 
-    private String cep;
-    private String logradouro;
-    private String complemento;
-    private String bairro;
-    private String localidade;
-    private String uf;
+    @JsonProperty("cep")
+    private String code;
+
+    @JsonProperty("logradouro")
+    private String address;
+
+    @JsonProperty("complemento")
+    private String complement;
+
+    @JsonProperty("bairro")
+    private String district;
+
+    @JsonProperty("localidade")
+    private String city;
+
+    @JsonProperty("uf")
+    private String state;
+
     private String unidade;
     private String ibge;
     private String gia;
 
     public ViaCepAddressResponse(){}
 
-    public ViaCepAddressResponse(String cep, String logradouro, String complemento, String bairro,
-            String localidade, String uf, String unidade, String ibge, String gia) {
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.localidade = localidade;
-        this.uf = uf;
+    public ViaCepAddressResponse(String code, String address, String complement, String district, String city,
+            String state, String unidade, String ibge, String gia) {
+        this.code = code;
+        this.address = address;
+        this.complement = complement;
+        this.district = district;
+        this.city = city;
+        this.state = state;
         this.unidade = unidade;
         this.ibge = ibge;
         this.gia = gia;
     }
 
-    public String getCep() {
-        return cep;
+    public String getCode() {
+        return code;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getLogradouro() {
-        return logradouro;
+    public String getAddress() {
+        return address;
     }
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getComplemento() {
-        return complemento;
+    public String getComplement() {
+        return complement;
     }
 
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
+    public void setComplement(String complement) {
+        this.complement = complement;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getDistrict() {
+        return district;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
-    public String getLocalidade() {
-        return localidade;
+    public String getCity() {
+        return city;
     }
 
-    public void setLocalidade(String localidade) {
-        this.localidade = localidade;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getUf() {
-        return uf;
+    public String getState() {
+        return state;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getUnidade() {

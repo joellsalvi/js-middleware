@@ -5,20 +5,12 @@ package br.com.middleware.model.to;
  */
 public class AddressTO {
 
-    private String status;
     private String code;
     private String state;
     private String city;
     private String district;
     private String address;
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    private String complement;
 
     public String getCode() {
         return code;
@@ -59,4 +51,13 @@ public class AddressTO {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public String getComplement() {
+        return complement;
+    }
+
+    public void setComplement(String complement) {
+        this.complement = complement;
+    }
+
 }

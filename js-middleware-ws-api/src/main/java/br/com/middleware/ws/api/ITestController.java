@@ -17,9 +17,14 @@ import br.com.middleware.ws.api.response.TestResponse;
 @RequestMapping("/test")
 public interface ITestController {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/{cep}",
+    @RequestMapping(method = RequestMethod.POST, value = "/widenet/{cep}",
             consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    HttpResponseWrapper<TestResponse> testarController(@PathVariable("cep") String cep, @RequestBody Test test);
+    HttpResponseWrapper<TestResponse> testWideNet(@PathVariable("cep") String cep, @RequestBody Test test);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/viacep/{cep}",
+            consumes = "application/json", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    HttpResponseWrapper<TestResponse> testViaCep(@PathVariable("cep") String cep, @RequestBody Test test);
 
 }

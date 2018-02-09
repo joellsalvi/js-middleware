@@ -68,13 +68,6 @@
                 <version>${spring.cloud.dependencies.version}</version>
             </dependency>
 
-            <!-- EUREKA -->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-starter-eureka</artifactId>-->
-                <!--<version>${spring.cloud.version}</version>-->
-            <!--</dependency>-->
-
             <!-- https://mvnrepository.com/artifact/com.netflix.ribbon/ribbon -->
             <dependency>
                 <groupId>com.netflix.ribbon</groupId>
