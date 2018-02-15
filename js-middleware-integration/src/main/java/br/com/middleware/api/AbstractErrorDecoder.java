@@ -74,21 +74,4 @@ public abstract class AbstractErrorDecoder implements ErrorDecoder {
         }
     }
 
-//    protected <T> Optional<T> extractErrorResponse(String errorBody, Class<T> clazz) {
-//        if (StringUtils.isNotBlank(errorBody)) {
-//            T obj;
-//
-//            try {
-//                obj = FeignUtils.customObjectMapper().readValue(errorBody, clazz);
-//
-//            } catch (IOException e) {
-//                LOGGER.fatal(e.getMessage(), e);
-//                return Optional.empty();
-//            }
-//
-//            return Optional.of(obj);
-//        }
-//
-//        return Optional.empty();
-//    }
 }

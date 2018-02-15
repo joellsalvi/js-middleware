@@ -13,6 +13,7 @@ import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
+import feign.okhttp.OkHttpClient;
 
 /**
  * Created by zup134 on 08/02/18.
@@ -27,6 +28,7 @@ public class ApiViaCepConfig {
     @Autowired
     public ApiViaCep defineBean(ObjectMapper objectMapper) {
         return Feign.builder()
+                .client(new OkHttpClient())
                 .encoder(new JacksonEncoder(objectMapper))
                 .decoder(new JacksonDecoder(objectMapper))
                 .errorDecoder(new DefaultErrorDecoder("ViaCep"))
