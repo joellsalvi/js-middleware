@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.middleware.model.process.Test;
 import br.com.middleware.ws.mapper.TestTOMapper;
 import br.com.middleware.ws.api.commons.HttpResponseWrapper;
-import br.com.middlewareservice.api.ITestService;
+import br.com.middleware.service.api.ITestService;
 import br.com.middleware.ws.api.ITestController;
 import br.com.middleware.ws.api.response.TestResponse;
 
@@ -17,10 +17,14 @@ import br.com.middleware.ws.api.response.TestResponse;
 @RestController
 public class TestController implements ITestController {
 
-    @Autowired
     private ITestService testService;
-    @Autowired
     private TestTOMapper testTOMapper;
+
+    @Autowired
+    public TestController(ITestService testService, TestTOMapper testTOMapper) {
+        this.testService = testService;
+        this.testTOMapper = testTOMapper;
+    }
 
     @Override
     public HttpResponseWrapper<TestResponse> testWideNet(String cep, @RequestBody Test test) {

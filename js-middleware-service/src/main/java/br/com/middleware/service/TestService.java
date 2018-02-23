@@ -10,7 +10,7 @@ import br.com.middleware.mapper.TestMapper;
 import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.AddressTO;
 import br.com.middleware.model.to.TestTO;
-import br.com.middlewareservice.api.ITestService;
+import br.com.middleware.service.api.ITestService;
 
 /**
  * Created by joel on 31/01/18.
@@ -18,14 +18,18 @@ import br.com.middlewareservice.api.ITestService;
 @Service
 public class TestService implements ITestService {
 
-    @Autowired
     private TestMapper testMapper;
-    @Autowired
     private AddressMapper addressMapper;
-    @Autowired
     private ApiWideNet apiWideNet;
-    @Autowired
     private ApiViaCep apiViaCep;
+
+    @Autowired
+    public TestService(TestMapper testMapper, AddressMapper addressMapper, ApiWideNet apiWideNet, ApiViaCep apiViaCep) {
+        this.testMapper = testMapper;
+        this.addressMapper = addressMapper;
+        this.apiWideNet = apiWideNet;
+        this.apiViaCep = apiViaCep;
+    }
 
     public TestTO testWideNet(String cep, Test test) {
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));

@@ -19,7 +19,7 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
  * </pre>
  */
 @Configuration
-@ComponentScan(basePackages = {"br.com.middleware"})//, "br.com.middleware.service", "br.com.middleware.ws"})
+@ComponentScan(basePackages = {"br.com.middleware"})
 @PropertySource("classpath:application.properties")
 public class JsMiddlewareApplicationConfig {
 

@@ -1,4 +1,4 @@
-package br.com.middlewareservice.api;
+package br.com.middleware.service.api;
 
 import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.TestTO;
