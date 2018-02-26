@@ -1,5 +1,7 @@
 package br.com.middleware.dataaccess.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "bank")
-public class Bank {
+public class Bank implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

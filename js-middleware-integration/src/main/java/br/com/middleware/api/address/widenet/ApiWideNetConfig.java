@@ -2,14 +2,12 @@ package br.com.middleware.api.address.widenet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.netflix.feign.support.SpringMvcContract;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.middleware.api.DefaultErrorDecoder;
-import feign.Contract;
 import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonDecoder;

@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 /**
@@ -19,8 +20,16 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
  * </pre>
  */
 @Configuration
-@ComponentScan(basePackages = {"br.com.middleware"})
+@ComponentScan(basePackages = {
+        "br.com.middleware",
+        "br.com.middleware.ws",
+        "br.com.middleware.service",
+        "br.com.middleware.api",
+        "br.com.middleware.dataaccess",
+        "br.com.middleware.mapper"
+        })
 @PropertySource("classpath:application.properties")
+@EnableWebMvc
 public class JsMiddlewareApplicationConfig {
 
     @Bean

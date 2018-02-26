@@ -42,12 +42,6 @@
             <artifactId>rxjava</artifactId>
         </dependency>
 
-        <!-- spring-core -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-        </dependency>
-
         <!-- github.openfeign -->
         <dependency>
             <groupId>io.github.openfeign</groupId>

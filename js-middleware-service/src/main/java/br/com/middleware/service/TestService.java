@@ -2,6 +2,7 @@ package br.com.middleware.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.middleware.api.address.viacep.ApiViaCep;
 import br.com.middleware.api.address.widenet.ApiWideNet;
@@ -16,6 +17,7 @@ import br.com.middleware.service.api.ITestService;
  * Created by joel on 31/01/18.
  */
 @Service
+@Transactional
 public class TestService implements ITestService {
 
     private TestMapper testMapper;
