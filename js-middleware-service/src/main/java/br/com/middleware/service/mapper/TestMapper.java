@@ -1,4 +1,4 @@
-package br.com.middleware.mapper;
+package br.com.middleware.service.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

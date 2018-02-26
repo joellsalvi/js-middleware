@@ -17,13 +17,13 @@ import br.com.middleware.ws.api.response.TestResponse;
 @RestController
 public class TestController implements ITestController {
 
-    private ITestService testService;
     private TestTOMapper testTOMapper;
+    private ITestService testService;
 
     @Autowired
-    public TestController(ITestService testService, TestTOMapper testTOMapper) {
-        this.testService = testService;
+    public TestController(TestTOMapper testTOMapper, ITestService testService) {
         this.testTOMapper = testTOMapper;
+        this.testService = testService;
     }
 
     @Override

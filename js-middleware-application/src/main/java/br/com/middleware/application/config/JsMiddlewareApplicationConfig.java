@@ -21,12 +21,10 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
  */
 @Configuration
 @ComponentScan(basePackages = {
-        "br.com.middleware",
-        "br.com.middleware.ws",
-        "br.com.middleware.service",
+//        "br.com.middleware.ws.api",
+//        "br.com.middleware.service.api",
         "br.com.middleware.api",
-        "br.com.middleware.dataaccess",
-        "br.com.middleware.mapper"
+        "br.com.middleware.ws"
         })
 @PropertySource("classpath:application.properties")
 @EnableWebMvc

@@ -6,8 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.middleware.api.address.viacep.ApiViaCep;
 import br.com.middleware.api.address.widenet.ApiWideNet;
-import br.com.middleware.mapper.AddressMapper;
-import br.com.middleware.mapper.TestMapper;
+import br.com.middleware.service.mapper.AddressMapper;
+import br.com.middleware.service.mapper.TestMapper;
 import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.AddressTO;
 import br.com.middleware.model.to.TestTO;
@@ -16,7 +16,6 @@ import br.com.middleware.service.api.ITestService;
 /**
  * Created by joel on 31/01/18.
  */
-@Service
 @Transactional
 public class TestService implements ITestService {
 

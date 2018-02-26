@@ -20,7 +20,7 @@
 
         <dependency>
             <groupId>br.com</groupId>
-            <artifactId>js-middleware-service</artifactId>
+            <artifactId>js-middleware-service-api</artifactId>
         </dependency>
 
         <!-- MapStruct -->
