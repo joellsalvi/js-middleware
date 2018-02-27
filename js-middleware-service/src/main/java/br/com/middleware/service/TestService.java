@@ -39,7 +39,7 @@ public class TestService implements ITestService {
 
     @Override
     public TestTO testWideNet(String cep, Test test) {
-        System.out.println(bankRepository.findAll());
+        bankRepository.findAll().forEach(b -> System.out.println(b.toString()));
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);
     }

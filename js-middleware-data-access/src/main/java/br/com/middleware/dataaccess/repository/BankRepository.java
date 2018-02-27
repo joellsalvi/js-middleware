@@ -1,15 +1,14 @@
 package br.com.middleware.dataaccess.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import br.com.middleware.dataaccess.entity.Bank;
+import br.com.middleware.dataaccess.entity.BankEntity;
 
 /**
  * Created by zup134 on 23/02/18.
  */
 @Repository
-public interface BankRepository extends JpaRepository<Bank, Long> {
+public interface BankRepository extends JpaRepository<BankEntity, Long> {
 
 }

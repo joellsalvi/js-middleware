@@ -1,0 +1,232 @@
+package br.com.middleware.dataaccess.entity;
+
+import java.math.BigInteger;
+import java.sql.Timestamp;
+import java.util.Arrays;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ * Created by zup134 on 27/02/18.
+ */
+@Entity
+@Table(name = "payment", schema = "public", catalog = "js-middleware")
+public class PaymentEntity {
+    private Integer id;
+    private String token;
+    private byte[] qrCode;
+    private BigInteger price;
+    private String currencyIsoCode;
+    private String description;
+    private Timestamp paymentDate;
+    private Long status;
+    private Timestamp registerDate;
+    private Timestamp updateDate;
+    private Timestamp expirationDate;
+    private String ownerId;
+    private String ownerType;
+    private String payerId;
+    private String payerType;
+
+    @Id
+    @Column(name = "id", nullable = false)
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "token", nullable = false, length = 255)
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    @Basic
+    @Column(name = "qr_code", nullable = true)
+    public byte[] getQrCode() {
+        return qrCode;
+    }
+
+    public void setQrCode(byte[] qrCode) {
+        this.qrCode = qrCode;
+    }
+
+    @Basic
+    @Column(name = "price", nullable = false, precision = 0)
+    public BigInteger getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigInteger price) {
+        this.price = price;
+    }
+
+    @Basic
+    @Column(name = "currency_iso_code", nullable = false, length = 5)
+    public String getCurrencyIsoCode() {
+        return currencyIsoCode;
+    }
+
+    public void setCurrencyIsoCode(String currencyIsoCode) {
+        this.currencyIsoCode = currencyIsoCode;
+    }
+
+    @Basic
+    @Column(name = "description", nullable = true, length = 45)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Basic
+    @Column(name = "payment_date", nullable = false)
+    public Timestamp getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(Timestamp paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    @Basic
+    @Column(name = "status", nullable = false)
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    public Timestamp getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Timestamp registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    @Basic
+    @Column(name = "update_date", nullable = true)
+    public Timestamp getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Timestamp updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    @Basic
+    @Column(name = "expiration_date", nullable = true)
+    public Timestamp getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Timestamp expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    public String getOwnerType() {
+        return ownerType;
+    }
+
+    public void setOwnerType(String ownerType) {
+        this.ownerType = ownerType;
+    }
+
+    @Basic
+    @Column(name = "payer_id", nullable = true, length = 255)
+    public String getPayerId() {
+        return payerId;
+    }
+
+    public void setPayerId(String payerId) {
+        this.payerId = payerId;
+    }
+
+    @Basic
+    @Column(name = "payer_type", nullable = true, length = -1)
+    public String getPayerType() {
+        return payerType;
+    }
+
+    public void setPayerType(String payerType) {
+        this.payerType = payerType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PaymentEntity that = (PaymentEntity) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (token != null ? !token.equals(that.token) : that.token != null) return false;
+        if (!Arrays.equals(qrCode, that.qrCode)) return false;
+        if (price != null ? !price.equals(that.price) : that.price != null) return false;
+        if (currencyIsoCode != null ? !currencyIsoCode.equals(that.currencyIsoCode) : that.currencyIsoCode != null)
+            return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (paymentDate != null ? !paymentDate.equals(that.paymentDate) : that.paymentDate != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (registerDate != null ? !registerDate.equals(that.registerDate) : that.registerDate != null) return false;
+        if (updateDate != null ? !updateDate.equals(that.updateDate) : that.updateDate != null) return false;
+        if (expirationDate != null ? !expirationDate.equals(that.expirationDate) : that.expirationDate != null)
+            return false;
+        if (ownerId != null ? !ownerId.equals(that.ownerId) : that.ownerId != null) return false;
+        if (ownerType != null ? !ownerType.equals(that.ownerType) : that.ownerType != null) return false;
+        if (payerId != null ? !payerId.equals(that.payerId) : that.payerId != null) return false;
+        if (payerType != null ? !payerType.equals(that.payerType) : that.payerType != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (token != null ? token.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(qrCode);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (currencyIsoCode != null ? currencyIsoCode.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (paymentDate != null ? paymentDate.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (registerDate != null ? registerDate.hashCode() : 0);
+        result = 31 * result + (updateDate != null ? updateDate.hashCode() : 0);
+        result = 31 * result + (expirationDate != null ? expirationDate.hashCode() : 0);
+        result = 31 * result + (ownerId != null ? ownerId.hashCode() : 0);
+        result = 31 * result + (ownerType != null ? ownerType.hashCode() : 0);
+        result = 31 * result + (payerId != null ? payerId.hashCode() : 0);
+        result = 31 * result + (payerType != null ? payerType.hashCode() : 0);
+        return result;
+    }
+}
