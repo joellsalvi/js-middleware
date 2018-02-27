@@ -5,13 +5,15 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 /**
@@ -21,14 +23,11 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
  */
 @Configuration
 @ComponentScan(basePackages = {
-//        "br.com.middleware.ws.api",
-//        "br.com.middleware.service.api",
-        "br.com.middleware.api",
-        "br.com.middleware.ws"
-        })
+        "br.com.middleware.ws",
+        "br.com.middleware.service"
+})
 @PropertySource("classpath:application.properties")
-@EnableWebMvc
-public class JsMiddlewareApplicationConfig {
+public class JsMiddlewareApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public ResourceBundleMessageSource messageSource() {

@@ -6,16 +6,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.middleware.api.address.viacep.ApiViaCep;
 import br.com.middleware.api.address.widenet.ApiWideNet;
-import br.com.middleware.service.mapper.AddressMapper;
-import br.com.middleware.service.mapper.TestMapper;
+import br.com.middleware.dataaccess.repository.BankRepository;
 import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.AddressTO;
 import br.com.middleware.model.to.TestTO;
 import br.com.middleware.service.api.ITestService;
+import br.com.middleware.service.mapper.AddressMapper;
+import br.com.middleware.service.mapper.TestMapper;
 
 /**
  * Created by joel on 31/01/18.
  */
+@Service
 @Transactional
 public class TestService implements ITestService {
 
@@ -23,20 +25,26 @@ public class TestService implements ITestService {
     private AddressMapper addressMapper;
     private ApiWideNet apiWideNet;
     private ApiViaCep apiViaCep;
+    private BankRepository bankRepository;
 
     @Autowired
-    public TestService(TestMapper testMapper, AddressMapper addressMapper, ApiWideNet apiWideNet, ApiViaCep apiViaCep) {
+    public TestService(TestMapper testMapper, AddressMapper addressMapper, ApiWideNet apiWideNet, ApiViaCep apiViaCep,
+            BankRepository bankRepository) {
         this.testMapper = testMapper;
         this.addressMapper = addressMapper;
         this.apiWideNet = apiWideNet;
         this.apiViaCep = apiViaCep;
+        this.bankRepository = bankRepository;
     }
 
+    @Override
     public TestTO testWideNet(String cep, Test test) {
+        System.out.println(bankRepository.findAll());
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);
     }
 
+    @Override
     public TestTO testViaCep(String cep, Test test) {
         AddressTO addressTO = addressMapper.from(apiViaCep.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);
