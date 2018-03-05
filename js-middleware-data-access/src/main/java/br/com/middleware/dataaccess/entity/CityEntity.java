@@ -12,12 +12,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "city", schema = "public", catalog = "js-middleware")
 public class CityEntity {
-    private Integer id;
-    private String name;
-    private Long state;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "name", nullable = true, length = 120)
+    private String name;
+
+    @Basic
+    @Column(name = "state", nullable = true)
+    private Long state;
+
     public Integer getId() {
         return id;
     }
@@ -26,8 +33,6 @@ public class CityEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name", nullable = true, length = 120)
     public String getName() {
         return name;
     }
@@ -36,8 +41,6 @@ public class CityEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "state", nullable = true)
     public Long getState() {
         return state;
     }

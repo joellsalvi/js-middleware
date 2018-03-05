@@ -14,26 +14,75 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "card", schema = "public", catalog = "js-middleware")
 public class CardEntity {
-    private Integer id;
-    private String number;
-    private Timestamp validity;
-    private String name;
-    private String brand;
-    private String agency;
-    private String agencyDigit;
-    private String account;
-    private String accountDigit;
-    private Long bankId;
-    private Long cvv;
-    private String function;
-    private String status;
-    private Timestamp registerDate;
-    private Timestamp updateDate;
-    private String ownerId;
-    private String ownerType;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "number", nullable = false, length = 45)
+    private String number;
+
+    @Basic
+    @Column(name = "validity", nullable = false)
+    private Timestamp validity;
+
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
+    private String name;
+
+    @Basic
+    @Column(name = "brand", nullable = false, length = 45)
+    private String brand;
+
+    @Basic
+    @Column(name = "agency", nullable = false, length = 20)
+    private String agency;
+
+    @Basic
+    @Column(name = "agency_digit", nullable = true, length = -1)
+    private String agencyDigit;
+
+    @Basic
+    @Column(name = "account", nullable = false, length = 20)
+    private String account;
+
+    @Basic
+    @Column(name = "account_digit", nullable = true, length = -1)
+    private String accountDigit;
+
+    @Basic
+    @Column(name = "bank_id", nullable = false)
+    private Long bankId;
+
+    @Basic
+    @Column(name = "cvv", nullable = true)
+    private Long cvv;
+
+    @Basic
+    @Column(name = "function", nullable = false, length = -1)
+    private String function;
+
+    @Basic
+    @Column(name = "status", nullable = false, length = -1)
+    private String status;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
+    @Basic
+    @Column(name = "update_date", nullable = false)
+    private Timestamp updateDate;
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    private String ownerId;
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    private String ownerType;
+
     public Integer getId() {
         return id;
     }
@@ -42,8 +91,6 @@ public class CardEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "number", nullable = false, length = 45)
     public String getNumber() {
         return number;
     }
@@ -52,8 +99,6 @@ public class CardEntity {
         this.number = number;
     }
 
-    @Basic
-    @Column(name = "validity", nullable = false)
     public Timestamp getValidity() {
         return validity;
     }
@@ -62,8 +107,6 @@ public class CardEntity {
         this.validity = validity;
     }
 
-    @Basic
-    @Column(name = "name", nullable = false, length = 45)
     public String getName() {
         return name;
     }
@@ -72,8 +115,6 @@ public class CardEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "brand", nullable = false, length = 45)
     public String getBrand() {
         return brand;
     }
@@ -82,8 +123,6 @@ public class CardEntity {
         this.brand = brand;
     }
 
-    @Basic
-    @Column(name = "agency", nullable = false, length = 20)
     public String getAgency() {
         return agency;
     }
@@ -92,8 +131,6 @@ public class CardEntity {
         this.agency = agency;
     }
 
-    @Basic
-    @Column(name = "agency_digit", nullable = true, length = -1)
     public String getAgencyDigit() {
         return agencyDigit;
     }
@@ -102,8 +139,6 @@ public class CardEntity {
         this.agencyDigit = agencyDigit;
     }
 
-    @Basic
-    @Column(name = "account", nullable = false, length = 20)
     public String getAccount() {
         return account;
     }
@@ -112,8 +147,6 @@ public class CardEntity {
         this.account = account;
     }
 
-    @Basic
-    @Column(name = "account_digit", nullable = true, length = -1)
     public String getAccountDigit() {
         return accountDigit;
     }
@@ -122,8 +155,6 @@ public class CardEntity {
         this.accountDigit = accountDigit;
     }
 
-    @Basic
-    @Column(name = "bank_id", nullable = false)
     public Long getBankId() {
         return bankId;
     }
@@ -132,8 +163,6 @@ public class CardEntity {
         this.bankId = bankId;
     }
 
-    @Basic
-    @Column(name = "cvv", nullable = true)
     public Long getCvv() {
         return cvv;
     }
@@ -142,8 +171,6 @@ public class CardEntity {
         this.cvv = cvv;
     }
 
-    @Basic
-    @Column(name = "function", nullable = false, length = -1)
     public String getFunction() {
         return function;
     }
@@ -152,8 +179,6 @@ public class CardEntity {
         this.function = function;
     }
 
-    @Basic
-    @Column(name = "status", nullable = false, length = -1)
     public String getStatus() {
         return status;
     }
@@ -162,8 +187,6 @@ public class CardEntity {
         this.status = status;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }
@@ -172,8 +195,6 @@ public class CardEntity {
         this.registerDate = registerDate;
     }
 
-    @Basic
-    @Column(name = "update_date", nullable = false)
     public Timestamp getUpdateDate() {
         return updateDate;
     }
@@ -182,8 +203,6 @@ public class CardEntity {
         this.updateDate = updateDate;
     }
 
-    @Basic
-    @Column(name = "owner_id", nullable = false, length = 255)
     public String getOwnerId() {
         return ownerId;
     }
@@ -192,8 +211,6 @@ public class CardEntity {
         this.ownerId = ownerId;
     }
 
-    @Basic
-    @Column(name = "owner_type", nullable = false, length = -1)
     public String getOwnerType() {
         return ownerType;
     }

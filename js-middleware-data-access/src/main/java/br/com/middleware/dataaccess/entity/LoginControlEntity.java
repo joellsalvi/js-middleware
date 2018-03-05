@@ -14,12 +14,31 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "login_control", schema = "public", catalog = "js-middleware")
 public class LoginControlEntity {
-    private String username;
-    private Short attempts;
-    private Timestamp lastTryDate;
 
     @Id
+    @Column(name = "id_login", nullable = false)
+    private Integer idLogin;
+
+    @Basic
     @Column(name = "username", nullable = false, length = 100)
+    private String username;
+
+    @Basic
+    @Column(name = "attempts", nullable = true)
+    private Short attempts;
+
+    @Basic
+    @Column(name = "last_try_date", nullable = true)
+    private Timestamp lastTryDate;
+
+    public Integer getIdLogin() {
+        return idLogin;
+    }
+
+    public void setIdLogin(Integer idLogin) {
+        this.idLogin = idLogin;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -28,8 +47,6 @@ public class LoginControlEntity {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "attempts", nullable = true)
     public Short getAttempts() {
         return attempts;
     }
@@ -38,8 +55,6 @@ public class LoginControlEntity {
         this.attempts = attempts;
     }
 
-    @Basic
-    @Column(name = "last_try_date", nullable = true)
     public Timestamp getLastTryDate() {
         return lastTryDate;
     }

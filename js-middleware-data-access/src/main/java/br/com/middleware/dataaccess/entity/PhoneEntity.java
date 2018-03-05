@@ -12,15 +12,31 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "phone", schema = "public", catalog = "js-middleware")
 public class PhoneEntity {
-    private Integer id;
-    private String countryCode;
-    private String stateCode;
-    private String number;
-    private String ownerId;
-    private String ownerType;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "country_code", nullable = false, length = 5)
+    private String countryCode;
+
+    @Basic
+    @Column(name = "state_code", nullable = false, length = 10)
+    private String stateCode;
+
+    @Basic
+    @Column(name = "number", nullable = false, length = 15)
+    private String number;
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    private String ownerId;
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    private String ownerType;
+
     public Integer getId() {
         return id;
     }
@@ -29,8 +45,6 @@ public class PhoneEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "country_code", nullable = false, length = 5)
     public String getCountryCode() {
         return countryCode;
     }
@@ -39,8 +53,6 @@ public class PhoneEntity {
         this.countryCode = countryCode;
     }
 
-    @Basic
-    @Column(name = "state_code", nullable = false, length = 10)
     public String getStateCode() {
         return stateCode;
     }
@@ -49,8 +61,6 @@ public class PhoneEntity {
         this.stateCode = stateCode;
     }
 
-    @Basic
-    @Column(name = "number", nullable = false, length = 15)
     public String getNumber() {
         return number;
     }
@@ -59,8 +69,6 @@ public class PhoneEntity {
         this.number = number;
     }
 
-    @Basic
-    @Column(name = "owner_id", nullable = false, length = 255)
     public String getOwnerId() {
         return ownerId;
     }
@@ -69,8 +77,6 @@ public class PhoneEntity {
         this.ownerId = ownerId;
     }
 
-    @Basic
-    @Column(name = "owner_type", nullable = false, length = -1)
     public String getOwnerType() {
         return ownerType;
     }

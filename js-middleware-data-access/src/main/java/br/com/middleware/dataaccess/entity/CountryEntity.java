@@ -12,13 +12,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "country", schema = "public", catalog = "js-middleware")
 public class CountryEntity {
-    private Integer id;
-    private String name;
-    private String shortName;
-    private String phoneCode;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "name", nullable = true, length = 60)
+    private String name;
+
+    @Basic
+    @Column(name = "short_name", nullable = true, length = 10)
+    private String shortName;
+
+    @Basic
+    @Column(name = "phone_code", nullable = true, length = 10)
+    private String phoneCode;
+
     public Integer getId() {
         return id;
     }
@@ -27,8 +37,6 @@ public class CountryEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name", nullable = true, length = 60)
     public String getName() {
         return name;
     }
@@ -37,8 +45,6 @@ public class CountryEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "short_name", nullable = true, length = 10)
     public String getShortName() {
         return shortName;
     }
@@ -47,8 +53,6 @@ public class CountryEntity {
         this.shortName = shortName;
     }
 
-    @Basic
-    @Column(name = "phone_code", nullable = true, length = 10)
     public String getPhoneCode() {
         return phoneCode;
     }

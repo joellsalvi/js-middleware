@@ -16,24 +16,67 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "payment", schema = "public", catalog = "js-middleware")
 public class PaymentEntity {
-    private Integer id;
-    private String token;
-    private byte[] qrCode;
-    private BigInteger price;
-    private String currencyIsoCode;
-    private String description;
-    private Timestamp paymentDate;
-    private Long status;
-    private Timestamp registerDate;
-    private Timestamp updateDate;
-    private Timestamp expirationDate;
-    private String ownerId;
-    private String ownerType;
-    private String payerId;
-    private String payerType;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "token", nullable = false, length = 255)
+    private String token;
+
+    @Basic
+    @Column(name = "qr_code", nullable = true)
+    private byte[] qrCode;
+
+    @Basic
+    @Column(name = "price", nullable = false, precision = 0)
+    private BigInteger price;
+
+    @Basic
+    @Column(name = "currency_iso_code", nullable = false, length = 5)
+    private String currencyIsoCode;
+
+    @Basic
+    @Column(name = "description", nullable = true, length = 45)
+    private String description;
+
+    @Basic
+    @Column(name = "payment_date", nullable = false)
+    private Timestamp paymentDate;
+
+    @Basic
+    @Column(name = "status", nullable = false)
+    private Long status;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
+    @Basic
+    @Column(name = "update_date", nullable = true)
+    private Timestamp updateDate;
+
+    @Basic
+    @Column(name = "expiration_date", nullable = true)
+    private Timestamp expirationDate;
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    private String ownerId;
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    private String ownerType;
+
+    @Basic
+    @Column(name = "payer_id", nullable = true, length = 255)
+    private String payerId;
+
+    @Basic
+    @Column(name = "payer_type", nullable = true, length = -1)
+    private String payerType;
+
     public Integer getId() {
         return id;
     }
@@ -42,8 +85,6 @@ public class PaymentEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "token", nullable = false, length = 255)
     public String getToken() {
         return token;
     }
@@ -52,8 +93,6 @@ public class PaymentEntity {
         this.token = token;
     }
 
-    @Basic
-    @Column(name = "qr_code", nullable = true)
     public byte[] getQrCode() {
         return qrCode;
     }
@@ -62,8 +101,6 @@ public class PaymentEntity {
         this.qrCode = qrCode;
     }
 
-    @Basic
-    @Column(name = "price", nullable = false, precision = 0)
     public BigInteger getPrice() {
         return price;
     }
@@ -72,8 +109,6 @@ public class PaymentEntity {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "currency_iso_code", nullable = false, length = 5)
     public String getCurrencyIsoCode() {
         return currencyIsoCode;
     }
@@ -82,8 +117,6 @@ public class PaymentEntity {
         this.currencyIsoCode = currencyIsoCode;
     }
 
-    @Basic
-    @Column(name = "description", nullable = true, length = 45)
     public String getDescription() {
         return description;
     }
@@ -92,8 +125,6 @@ public class PaymentEntity {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "payment_date", nullable = false)
     public Timestamp getPaymentDate() {
         return paymentDate;
     }
@@ -102,8 +133,6 @@ public class PaymentEntity {
         this.paymentDate = paymentDate;
     }
 
-    @Basic
-    @Column(name = "status", nullable = false)
     public Long getStatus() {
         return status;
     }
@@ -112,8 +141,6 @@ public class PaymentEntity {
         this.status = status;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }
@@ -122,8 +149,6 @@ public class PaymentEntity {
         this.registerDate = registerDate;
     }
 
-    @Basic
-    @Column(name = "update_date", nullable = true)
     public Timestamp getUpdateDate() {
         return updateDate;
     }
@@ -132,8 +157,6 @@ public class PaymentEntity {
         this.updateDate = updateDate;
     }
 
-    @Basic
-    @Column(name = "expiration_date", nullable = true)
     public Timestamp getExpirationDate() {
         return expirationDate;
     }
@@ -142,8 +165,6 @@ public class PaymentEntity {
         this.expirationDate = expirationDate;
     }
 
-    @Basic
-    @Column(name = "owner_id", nullable = false, length = 255)
     public String getOwnerId() {
         return ownerId;
     }
@@ -152,8 +173,6 @@ public class PaymentEntity {
         this.ownerId = ownerId;
     }
 
-    @Basic
-    @Column(name = "owner_type", nullable = false, length = -1)
     public String getOwnerType() {
         return ownerType;
     }
@@ -162,8 +181,6 @@ public class PaymentEntity {
         this.ownerType = ownerType;
     }
 
-    @Basic
-    @Column(name = "payer_id", nullable = true, length = 255)
     public String getPayerId() {
         return payerId;
     }
@@ -172,8 +189,6 @@ public class PaymentEntity {
         this.payerId = payerId;
     }
 
-    @Basic
-    @Column(name = "payer_type", nullable = true, length = -1)
     public String getPayerType() {
         return payerType;
     }

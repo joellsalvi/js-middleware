@@ -14,18 +14,43 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "login", schema = "public", catalog = "js-middleware")
 public class LoginEntity {
-    private Integer id;
-    private String ownerId;
-    private String ownerType;
-    private String username;
-    private String oldUsername;
-    private String password;
-    private String oldPassword;
-    private Timestamp registerDate;
-    private Timestamp updateDate;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    private String ownerId;
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    private String ownerType;
+
+    @Basic
+    @Column(name = "username", nullable = false, length = 100)
+    private String username;
+
+    @Basic
+    @Column(name = "old_username", nullable = true, length = 100)
+    private String oldUsername;
+
+    @Basic
+    @Column(name = "password", nullable = false, length = 255)
+    private String password;
+
+    @Basic
+    @Column(name = "old_password", nullable = true, length = 255)
+    private String oldPassword;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
+    @Basic
+    @Column(name = "update_date", nullable = true)
+    private Timestamp updateDate;
+
     public Integer getId() {
         return id;
     }
@@ -34,8 +59,6 @@ public class LoginEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "owner_id", nullable = false, length = 255)
     public String getOwnerId() {
         return ownerId;
     }
@@ -44,8 +67,6 @@ public class LoginEntity {
         this.ownerId = ownerId;
     }
 
-    @Basic
-    @Column(name = "owner_type", nullable = false, length = -1)
     public String getOwnerType() {
         return ownerType;
     }
@@ -54,8 +75,6 @@ public class LoginEntity {
         this.ownerType = ownerType;
     }
 
-    @Basic
-    @Column(name = "username", nullable = false, length = 100)
     public String getUsername() {
         return username;
     }
@@ -64,8 +83,6 @@ public class LoginEntity {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "old_username", nullable = true, length = 100)
     public String getOldUsername() {
         return oldUsername;
     }
@@ -74,8 +91,6 @@ public class LoginEntity {
         this.oldUsername = oldUsername;
     }
 
-    @Basic
-    @Column(name = "password", nullable = false, length = 255)
     public String getPassword() {
         return password;
     }
@@ -84,8 +99,6 @@ public class LoginEntity {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "old_password", nullable = true, length = 255)
     public String getOldPassword() {
         return oldPassword;
     }
@@ -94,8 +107,6 @@ public class LoginEntity {
         this.oldPassword = oldPassword;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }
@@ -104,8 +115,6 @@ public class LoginEntity {
         this.registerDate = registerDate;
     }
 
-    @Basic
-    @Column(name = "update_date", nullable = true)
     public Timestamp getUpdateDate() {
         return updateDate;
     }

@@ -15,25 +15,71 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "company", schema = "public", catalog = "js-middleware")
 public class CompanyEntity {
-    private String id;
-    private String identification;
-    private String identificationType;
-    private String fantasyName;
-    private String comercialName;
-    private String businessSize;
-    private Timestamp birthDate;
-    private Timestamp registerDate;
-    private Timestamp updateDate;
-    private String companySector;
-    private String customerId;
-    private BigInteger nominalCapital;
-    private String email;
-    private String website;
-    private Boolean isPrivate;
-    private Boolean active;
 
     @Id
     @Column(name = "id", nullable = false, length = 255)
+    private String id;
+
+    @Basic
+    @Column(name = "identification", nullable = false, length = 100)
+    private String identification;
+
+    @Basic
+    @Column(name = "identification_type", nullable = false, length = 15)
+    private String identificationType;
+
+    @Basic
+    @Column(name = "fantasy_name", nullable = false, length = 100)
+    private String fantasyName;
+
+    @Basic
+    @Column(name = "comercial_name", nullable = false, length = 100)
+    private String comercialName;
+
+    @Basic
+    @Column(name = "business_size", nullable = false, length = 100)
+    private String businessSize;
+
+    @Basic
+    @Column(name = "birth_date", nullable = false)
+    private Timestamp birthDate;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
+    @Basic
+    @Column(name = "update_date", nullable = true)
+    private Timestamp updateDate;
+
+    @Basic
+    @Column(name = "company_sector", nullable = false, length = 100)
+    private String companySector;
+
+    @Basic
+    @Column(name = "customer_id", nullable = false, length = 255)
+    private String customerId;
+
+    @Basic
+    @Column(name = "nominal_capital", nullable = true, precision = 0)
+    private BigInteger nominalCapital;
+
+    @Basic
+    @Column(name = "email", nullable = false, length = 45)
+    private String email;
+
+    @Basic
+    @Column(name = "website", nullable = false, length = 255)
+    private String website;
+
+    @Basic
+    @Column(name = "is_private", nullable = false)
+    private Boolean isPrivate;
+
+    @Basic
+    @Column(name = "active", nullable = false)
+    private Boolean active;
+
     public String getId() {
         return id;
     }
@@ -42,8 +88,6 @@ public class CompanyEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "identification", nullable = false, length = 100)
     public String getIdentification() {
         return identification;
     }
@@ -52,8 +96,6 @@ public class CompanyEntity {
         this.identification = identification;
     }
 
-    @Basic
-    @Column(name = "identification_type", nullable = false, length = 15)
     public String getIdentificationType() {
         return identificationType;
     }
@@ -62,8 +104,6 @@ public class CompanyEntity {
         this.identificationType = identificationType;
     }
 
-    @Basic
-    @Column(name = "fantasy_name", nullable = false, length = 100)
     public String getFantasyName() {
         return fantasyName;
     }
@@ -72,8 +112,6 @@ public class CompanyEntity {
         this.fantasyName = fantasyName;
     }
 
-    @Basic
-    @Column(name = "comercial_name", nullable = false, length = 100)
     public String getComercialName() {
         return comercialName;
     }
@@ -82,8 +120,6 @@ public class CompanyEntity {
         this.comercialName = comercialName;
     }
 
-    @Basic
-    @Column(name = "business_size", nullable = false, length = 100)
     public String getBusinessSize() {
         return businessSize;
     }
@@ -92,8 +128,6 @@ public class CompanyEntity {
         this.businessSize = businessSize;
     }
 
-    @Basic
-    @Column(name = "birth_date", nullable = false)
     public Timestamp getBirthDate() {
         return birthDate;
     }
@@ -102,8 +136,6 @@ public class CompanyEntity {
         this.birthDate = birthDate;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }
@@ -112,8 +144,6 @@ public class CompanyEntity {
         this.registerDate = registerDate;
     }
 
-    @Basic
-    @Column(name = "update_date", nullable = true)
     public Timestamp getUpdateDate() {
         return updateDate;
     }
@@ -122,8 +152,6 @@ public class CompanyEntity {
         this.updateDate = updateDate;
     }
 
-    @Basic
-    @Column(name = "company_sector", nullable = false, length = 100)
     public String getCompanySector() {
         return companySector;
     }
@@ -132,8 +160,6 @@ public class CompanyEntity {
         this.companySector = companySector;
     }
 
-    @Basic
-    @Column(name = "customer_id", nullable = false, length = 255)
     public String getCustomerId() {
         return customerId;
     }
@@ -142,8 +168,6 @@ public class CompanyEntity {
         this.customerId = customerId;
     }
 
-    @Basic
-    @Column(name = "nominal_capital", nullable = true, precision = 0)
     public BigInteger getNominalCapital() {
         return nominalCapital;
     }
@@ -152,8 +176,6 @@ public class CompanyEntity {
         this.nominalCapital = nominalCapital;
     }
 
-    @Basic
-    @Column(name = "email", nullable = false, length = 45)
     public String getEmail() {
         return email;
     }
@@ -162,8 +184,6 @@ public class CompanyEntity {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "website", nullable = false, length = 255)
     public String getWebsite() {
         return website;
     }
@@ -172,8 +192,6 @@ public class CompanyEntity {
         this.website = website;
     }
 
-    @Basic
-    @Column(name = "is_private", nullable = false)
     public Boolean getPrivate() {
         return isPrivate;
     }
@@ -182,8 +200,6 @@ public class CompanyEntity {
         isPrivate = aPrivate;
     }
 
-    @Basic
-    @Column(name = "active", nullable = false)
     public Boolean getActive() {
         return active;
     }

@@ -14,19 +14,47 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "customer", schema = "public", catalog = "js-middleware")
 public class CustomerEntity {
-    private String id;
-    private String name;
-    private String secondName;
-    private String email;
-    private Timestamp birthday;
-    private String identification;
-    private String identificationType;
-    private Timestamp registerDate;
-    private Timestamp updateDate;
-    private Boolean active;
 
     @Id
     @Column(name = "id", nullable = false, length = 255)
+    private String id;
+
+    @Basic
+    @Column(name = "name", nullable = false, length = 15)
+    private String name;
+
+    @Basic
+    @Column(name = "second_name", nullable = false, length = 100)
+    private String secondName;
+
+    @Basic
+    @Column(name = "email", nullable = false, length = 100)
+    private String email;
+
+    @Basic
+    @Column(name = "birthday", nullable = false)
+    private Timestamp birthday;
+
+    @Basic
+    @Column(name = "identification", nullable = false, length = 100)
+    private String identification;
+
+    @Basic
+    @Column(name = "identification_type", nullable = false, length = 15)
+    private String identificationType;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
+    @Basic
+    @Column(name = "update_date", nullable = true)
+    private Timestamp updateDate;
+
+    @Basic
+    @Column(name = "active", nullable = false)
+    private Boolean active;
+
     public String getId() {
         return id;
     }
@@ -35,8 +63,6 @@ public class CustomerEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name", nullable = false, length = 15)
     public String getName() {
         return name;
     }
@@ -45,8 +71,6 @@ public class CustomerEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "second_name", nullable = false, length = 100)
     public String getSecondName() {
         return secondName;
     }
@@ -55,8 +79,6 @@ public class CustomerEntity {
         this.secondName = secondName;
     }
 
-    @Basic
-    @Column(name = "email", nullable = false, length = 100)
     public String getEmail() {
         return email;
     }
@@ -65,8 +87,6 @@ public class CustomerEntity {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "birthday", nullable = false)
     public Timestamp getBirthday() {
         return birthday;
     }
@@ -75,8 +95,6 @@ public class CustomerEntity {
         this.birthday = birthday;
     }
 
-    @Basic
-    @Column(name = "identification", nullable = false, length = 100)
     public String getIdentification() {
         return identification;
     }
@@ -85,8 +103,6 @@ public class CustomerEntity {
         this.identification = identification;
     }
 
-    @Basic
-    @Column(name = "identification_type", nullable = false, length = 15)
     public String getIdentificationType() {
         return identificationType;
     }
@@ -95,8 +111,6 @@ public class CustomerEntity {
         this.identificationType = identificationType;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }
@@ -105,8 +119,6 @@ public class CustomerEntity {
         this.registerDate = registerDate;
     }
 
-    @Basic
-    @Column(name = "update_date", nullable = true)
     public Timestamp getUpdateDate() {
         return updateDate;
     }
@@ -115,8 +127,6 @@ public class CustomerEntity {
         this.updateDate = updateDate;
     }
 
-    @Basic
-    @Column(name = "active", nullable = false)
     public Boolean getActive() {
         return active;
     }

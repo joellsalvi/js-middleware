@@ -14,13 +14,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "payment_status", schema = "public", catalog = "js-middleware")
 public class PaymentStatusEntity {
-    private Integer id;
-    private Long payment;
-    private String status;
-    private Timestamp registerDate;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "payment", nullable = false)
+    private Long payment;
+
+    @Basic
+    @Column(name = "status", nullable = false, length = -1)
+    private String status;
+
+    @Basic
+    @Column(name = "register_date", nullable = false)
+    private Timestamp registerDate;
+
     public Integer getId() {
         return id;
     }
@@ -29,8 +39,6 @@ public class PaymentStatusEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "payment", nullable = false)
     public Long getPayment() {
         return payment;
     }
@@ -39,8 +47,6 @@ public class PaymentStatusEntity {
         this.payment = payment;
     }
 
-    @Basic
-    @Column(name = "status", nullable = false, length = -1)
     public String getStatus() {
         return status;
     }
@@ -49,8 +55,6 @@ public class PaymentStatusEntity {
         this.status = status;
     }
 
-    @Basic
-    @Column(name = "register_date", nullable = false)
     public Timestamp getRegisterDate() {
         return registerDate;
     }

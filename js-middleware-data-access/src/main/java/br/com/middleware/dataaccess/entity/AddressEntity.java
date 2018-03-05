@@ -12,18 +12,43 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "address", schema = "public", catalog = "js-middleware")
 public class AddressEntity {
-    private Integer id;
-    private String street;
-    private Long number;
-    private String complement;
-    private String neighborhood;
-    private String areaCode;
-    private Long city;
-    private String ownerId;
-    private String ownerType;
 
     @Id
     @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Basic
+    @Column(name = "street", nullable = false, length = 100)
+    private String street;
+
+    @Basic
+    @Column(name = "number", nullable = false)
+    private Long number;
+
+    @Basic
+    @Column(name = "complement", nullable = true, length = 100)
+    private String complement;
+
+    @Basic
+    @Column(name = "neighborhood", nullable = false, length = 100)
+    private String neighborhood;
+
+    @Basic
+    @Column(name = "area_code", nullable = false, length = 20)
+    private String areaCode;
+
+    @Basic
+    @Column(name = "city", nullable = false)
+    private Long city;
+
+    @Basic
+    @Column(name = "owner_id", nullable = false, length = 255)
+    private String ownerId;
+
+    @Basic
+    @Column(name = "owner_type", nullable = false, length = -1)
+    private String ownerType;
+
     public Integer getId() {
         return id;
     }
@@ -32,8 +57,6 @@ public class AddressEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "street", nullable = false, length = 100)
     public String getStreet() {
         return street;
     }
@@ -42,8 +65,6 @@ public class AddressEntity {
         this.street = street;
     }
 
-    @Basic
-    @Column(name = "number", nullable = false)
     public Long getNumber() {
         return number;
     }
@@ -52,8 +73,6 @@ public class AddressEntity {
         this.number = number;
     }
 
-    @Basic
-    @Column(name = "complement", nullable = true, length = 100)
     public String getComplement() {
         return complement;
     }
@@ -62,8 +81,6 @@ public class AddressEntity {
         this.complement = complement;
     }
 
-    @Basic
-    @Column(name = "neighborhood", nullable = false, length = 100)
     public String getNeighborhood() {
         return neighborhood;
     }
@@ -72,8 +89,6 @@ public class AddressEntity {
         this.neighborhood = neighborhood;
     }
 
-    @Basic
-    @Column(name = "area_code", nullable = false, length = 20)
     public String getAreaCode() {
         return areaCode;
     }
@@ -82,8 +97,6 @@ public class AddressEntity {
         this.areaCode = areaCode;
     }
 
-    @Basic
-    @Column(name = "city", nullable = false)
     public Long getCity() {
         return city;
     }
@@ -92,8 +105,6 @@ public class AddressEntity {
         this.city = city;
     }
 
-    @Basic
-    @Column(name = "owner_id", nullable = false, length = 255)
     public String getOwnerId() {
         return ownerId;
     }
@@ -102,8 +113,6 @@ public class AddressEntity {
         this.ownerId = ownerId;
     }
 
-    @Basic
-    @Column(name = "owner_type", nullable = false, length = -1)
     public String getOwnerType() {
         return ownerType;
     }
