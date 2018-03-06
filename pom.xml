@@ -50,7 +50,6 @@
         <hibernate.version>5.2.13.Final</hibernate.version>
         <postgresql.version>9.4.1212.jre7</postgresql.version>
         <hikaricp.version>2.7.8</hikaricp.version>
-        <flyway.version>5.0.7</flyway.version>
 
         <resource.directory>src/main/resources</resource.directory>
 
@@ -64,6 +63,28 @@
         <developerConnection>scm:git:https://joelsalvi@bitbucket.org/joelsalvi/js-middleware.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <providerImplementations>
+                        <git>jgit</git>
+                    </providerImplementations>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>1.9.5</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencyManagement>
         <dependencies>
@@ -270,71 +291,7 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- Flyway -->
-            <dependency>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-core</artifactId>
-                <version>${flyway.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flyway.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                    <providerImplementations>
-                        <git>jgit</git>
-                    </providerImplementations>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-jgit</artifactId>
-                        <version>1.9.5</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flyway.version}</version>
-                <configuration>
-                    <baselineDescription>JS Middleware Base Version</baselineDescription>
-                    <baselineVersion>1</baselineVersion>
-                    <baselineOnMigrate>true</baselineOnMigrate>
-                    <table>flyway_schema_history</table>
-                    <schemas>public</schemas>
-                    <outOfOrder>true</outOfOrder>
-                    <sqlMigrationPrefix>V</sqlMigrationPrefix>
-                    <sqlMigrationSeparator>__</sqlMigrationSeparator>
-                    <sqlMigrationSuffix>.sql</sqlMigrationSuffix>
-                    <validateOnMigrate>true</validateOnMigrate>
-                    <ignoreMissingMigrations>true</ignoreMissingMigrations>
-                    <locations>js-middleware-application/src/main/resources/db/migration</locations>
-                    <url>jdbc:postgresql://localhost:5432/js-middleware</url>
-                    <user>js</user>
-                    <password>0ffSpring@mvc</password>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.postgresql</groupId>
-                        <artifactId>postgresql</artifactId>
-                        <version>${postgresql.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
