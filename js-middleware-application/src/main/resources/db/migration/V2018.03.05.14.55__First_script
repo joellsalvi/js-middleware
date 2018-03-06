@@ -1,1 +1,0 @@
-INSERT INTO LOGIN_CONTROL VALUES (1000, 'joelsalvi', 0, now())

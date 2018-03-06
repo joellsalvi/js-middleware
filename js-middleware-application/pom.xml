@@ -12,6 +12,77 @@
     <artifactId>js-middleware-application</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <flyway.version>5.0.7</flyway.version>
+    </properties>
+
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway.version}</version>
+                <configuration>
+                    <baselineDescription>JS Middleware Base Version</baselineDescription>
+                    <baselineVersion>1</baselineVersion>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <table>flyway_schema_history</table>
+                    <encoding>UTF-8</encoding>
+                    <schemas>
+                        <schema>js-middleware</schema>
+                    </schemas>
+                    <outOfOrder>false</outOfOrder>
+                    <sqlMigrationPrefix>V</sqlMigrationPrefix>
+                    <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                    <sqlMigrationSuffixes>
+                        <sqlMigrationSuffix>.sql</sqlMigrationSuffix>
+                    </sqlMigrationSuffixes>
+                    <validateOnMigrate>true</validateOnMigrate>
+                    <ignoreMissingMigrations>false</ignoreMissingMigrations>
+                    <locations>
+                        <location>db/migration</location>
+                    </locations>
+                    <url>jdbc:postgresql://localhost:5432/js-middleware</url>
+                    <user>js</user>
+                    <password>0ffSpring@mvc</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flyway database migration</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>baseline</goal>
+                            <goal>migrate</goal>
+                            <goal>info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgresql.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <!-- MODULES -->
         <dependency>
@@ -55,32 +126,6 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
-        <!-- Flyway -->
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-maven-plugin</artifactId>
-        </dependency>
     </dependencies>
-
-    <build>
-        <finalName>${project.name}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

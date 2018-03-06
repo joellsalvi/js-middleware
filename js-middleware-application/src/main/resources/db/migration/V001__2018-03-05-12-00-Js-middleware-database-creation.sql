@@ -1,32 +1,3 @@
-CREATE DATABASE "js-middleware"
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'pt_BR.UTF-8'
-    LC_CTYPE = 'pt_BR.UTF-8'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-
--- Database: js-middleware
-
--- DROP DATABASE "js-middleware";
-
-CREATE DATABASE "js-middleware"
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'pt_BR.UTF-8'
-    LC_CTYPE = 'pt_BR.UTF-8'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-
-GRANT ALL ON DATABASE "js-middleware" TO js WITH GRANT OPTION;
-
-GRANT TEMPORARY, CONNECT ON DATABASE "js-middleware" TO PUBLIC;
-
-GRANT ALL ON DATABASE "js-middleware" TO postgres;
-
-
 create table if not exists Country (
   id serial primary key,
   name varchar(60) default null unique,
