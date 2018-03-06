@@ -12,22 +12,19 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "login_control", schema = "public", catalog = "js-middleware")
+@Table(name = "login_control", catalog = "js-middleware")
 public class LoginControlEntity {
 
     @Id
     @Column(name = "id_login", nullable = false)
     private Integer idLogin;
 
-    @Basic
     @Column(name = "username", nullable = false, length = 100)
     private String username;
 
-    @Basic
     @Column(name = "attempts", nullable = true)
     private Short attempts;
 
-    @Basic
     @Column(name = "last_try_date", nullable = true)
     private Timestamp lastTryDate;
 

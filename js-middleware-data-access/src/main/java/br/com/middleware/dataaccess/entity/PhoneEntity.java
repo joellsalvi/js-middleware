@@ -10,30 +10,25 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "phone", schema = "public", catalog = "js-middleware")
+@Table(name = "phone", catalog = "js-middleware")
 public class PhoneEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "country_code", nullable = false, length = 5)
     private String countryCode;
 
-    @Basic
     @Column(name = "state_code", nullable = false, length = 10)
     private String stateCode;
 
-    @Basic
     @Column(name = "number", nullable = false, length = 15)
     private String number;
 
-    @Basic
     @Column(name = "owner_id", nullable = false, length = 255)
     private String ownerId;
 
-    @Basic
     @Column(name = "owner_type", nullable = false, length = -1)
     private String ownerType;
 

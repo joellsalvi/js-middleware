@@ -12,22 +12,19 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "payment_status", schema = "public", catalog = "js-middleware")
+@Table(name = "payment_status", catalog = "js-middleware")
 public class PaymentStatusEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "payment", nullable = false)
     private Long payment;
 
-    @Basic
     @Column(name = "status", nullable = false, length = -1)
     private String status;
 
-    @Basic
     @Column(name = "register_date", nullable = false)
     private Timestamp registerDate;
 

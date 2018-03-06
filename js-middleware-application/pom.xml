@@ -43,7 +43,7 @@
                     <table>flyway_schema_history</table>
                     <encoding>UTF-8</encoding>
                     <schemas>
-                        <schema>js-middleware</schema>
+                        <schema>js_middleware</schema>
                     </schemas>
                     <outOfOrder>false</outOfOrder>
                     <sqlMigrationPrefix>V</sqlMigrationPrefix>
@@ -65,9 +65,6 @@
                         <id>flyway database migration</id>
                         <phase>pre-integration-test</phase>
                         <goals>
-                            <goal>clean</goal>
-                            <goal>baseline</goal>
-                            <goal>migrate</goal>
                             <goal>info</goal>
                         </goals>
                     </execution>

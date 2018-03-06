@@ -13,70 +13,55 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "company", schema = "public", catalog = "js-middleware")
+@Table(name = "company", catalog = "js-middleware")
 public class CompanyEntity {
 
     @Id
     @Column(name = "id", nullable = false, length = 255)
     private String id;
 
-    @Basic
     @Column(name = "identification", nullable = false, length = 100)
     private String identification;
 
-    @Basic
     @Column(name = "identification_type", nullable = false, length = 15)
     private String identificationType;
 
-    @Basic
     @Column(name = "fantasy_name", nullable = false, length = 100)
     private String fantasyName;
 
-    @Basic
     @Column(name = "comercial_name", nullable = false, length = 100)
     private String comercialName;
 
-    @Basic
     @Column(name = "business_size", nullable = false, length = 100)
     private String businessSize;
 
-    @Basic
     @Column(name = "birth_date", nullable = false)
     private Timestamp birthDate;
 
-    @Basic
     @Column(name = "register_date", nullable = false)
     private Timestamp registerDate;
 
-    @Basic
     @Column(name = "update_date", nullable = true)
     private Timestamp updateDate;
 
-    @Basic
     @Column(name = "company_sector", nullable = false, length = 100)
     private String companySector;
 
-    @Basic
     @Column(name = "customer_id", nullable = false, length = 255)
     private String customerId;
 
-    @Basic
     @Column(name = "nominal_capital", nullable = true, precision = 0)
     private BigInteger nominalCapital;
 
-    @Basic
     @Column(name = "email", nullable = false, length = 45)
     private String email;
 
-    @Basic
     @Column(name = "website", nullable = false, length = 255)
     private String website;
 
-    @Basic
     @Column(name = "is_private", nullable = false)
     private Boolean isPrivate;
 
-    @Basic
     @Column(name = "active", nullable = false)
     private Boolean active;
 

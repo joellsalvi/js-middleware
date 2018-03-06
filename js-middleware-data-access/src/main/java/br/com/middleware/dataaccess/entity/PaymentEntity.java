@@ -14,66 +14,52 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "payment", schema = "public", catalog = "js-middleware")
+@Table(name = "payment", catalog = "js-middleware")
 public class PaymentEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "token", nullable = false, length = 255)
     private String token;
 
-    @Basic
     @Column(name = "qr_code", nullable = true)
     private byte[] qrCode;
 
-    @Basic
     @Column(name = "price", nullable = false, precision = 0)
     private BigInteger price;
 
-    @Basic
     @Column(name = "currency_iso_code", nullable = false, length = 5)
     private String currencyIsoCode;
 
-    @Basic
     @Column(name = "description", nullable = true, length = 45)
     private String description;
 
-    @Basic
     @Column(name = "payment_date", nullable = false)
     private Timestamp paymentDate;
 
-    @Basic
     @Column(name = "status", nullable = false)
     private Long status;
 
-    @Basic
     @Column(name = "register_date", nullable = false)
     private Timestamp registerDate;
 
-    @Basic
     @Column(name = "update_date", nullable = true)
     private Timestamp updateDate;
 
-    @Basic
     @Column(name = "expiration_date", nullable = true)
     private Timestamp expirationDate;
 
-    @Basic
     @Column(name = "owner_id", nullable = false, length = 255)
     private String ownerId;
 
-    @Basic
     @Column(name = "owner_type", nullable = false, length = -1)
     private String ownerType;
 
-    @Basic
     @Column(name = "payer_id", nullable = true, length = 255)
     private String payerId;
 
-    @Basic
     @Column(name = "payer_type", nullable = true, length = -1)
     private String payerType;
 

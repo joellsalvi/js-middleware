@@ -10,42 +10,34 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "address", schema = "public", catalog = "js-middleware")
+@Table(name = "address", catalog = "js-middleware")
 public class AddressEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "street", nullable = false, length = 100)
     private String street;
 
-    @Basic
     @Column(name = "number", nullable = false)
     private Long number;
 
-    @Basic
     @Column(name = "complement", nullable = true, length = 100)
     private String complement;
 
-    @Basic
     @Column(name = "neighborhood", nullable = false, length = 100)
     private String neighborhood;
 
-    @Basic
     @Column(name = "area_code", nullable = false, length = 20)
     private String areaCode;
 
-    @Basic
     @Column(name = "city", nullable = false)
     private Long city;
 
-    @Basic
     @Column(name = "owner_id", nullable = false, length = 255)
     private String ownerId;
 
-    @Basic
     @Column(name = "owner_type", nullable = false, length = -1)
     private String ownerType;
 

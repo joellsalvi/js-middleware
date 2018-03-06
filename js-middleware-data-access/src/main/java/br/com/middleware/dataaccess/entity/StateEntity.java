@@ -10,22 +10,19 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "state", schema = "public", catalog = "js-middleware")
+@Table(name = "state", catalog = "js-middleware")
 public class StateEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "name", nullable = true, length = 75)
     private String name;
 
-    @Basic
     @Column(name = "uf", nullable = true, length = 5)
     private String uf;
 
-    @Basic
     @Column(name = "country", nullable = true)
     private Long country;
 

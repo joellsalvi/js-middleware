@@ -1,85 +1,65 @@
 package br.com.middleware.dataaccess.entity;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "card", schema = "public", catalog = "js-middleware")
+@Table(name = "card", catalog = "js-middleware")
 public class CardEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "number", nullable = false, length = 45)
     private String number;
 
-    @Basic
     @Column(name = "validity", nullable = false)
     private Timestamp validity;
 
-    @Basic
     @Column(name = "name", nullable = false, length = 45)
     private String name;
 
-    @Basic
     @Column(name = "brand", nullable = false, length = 45)
     private String brand;
 
-    @Basic
     @Column(name = "agency", nullable = false, length = 20)
     private String agency;
 
-    @Basic
     @Column(name = "agency_digit", nullable = true, length = -1)
     private String agencyDigit;
 
-    @Basic
     @Column(name = "account", nullable = false, length = 20)
     private String account;
 
-    @Basic
     @Column(name = "account_digit", nullable = true, length = -1)
     private String accountDigit;
 
-    @Basic
-    @Column(name = "bank_id", nullable = false)
-    private Long bankId;
+    @ManyToOne
+    @JoinColumn(name = "bank_id", nullable = false)
+    private BankEntity bank;
 
-    @Basic
     @Column(name = "cvv", nullable = true)
     private Long cvv;
 
-    @Basic
     @Column(name = "function", nullable = false, length = -1)
     private String function;
 
-    @Basic
     @Column(name = "status", nullable = false, length = -1)
     private String status;
 
-    @Basic
     @Column(name = "register_date", nullable = false)
     private Timestamp registerDate;
 
-    @Basic
     @Column(name = "update_date", nullable = false)
     private Timestamp updateDate;
 
-    @Basic
     @Column(name = "owner_id", nullable = false, length = 255)
     private String ownerId;
 
-    @Basic
     @Column(name = "owner_type", nullable = false, length = -1)
     private String ownerType;
 
@@ -155,12 +135,12 @@ public class CardEntity {
         this.accountDigit = accountDigit;
     }
 
-    public Long getBankId() {
-        return bankId;
+    public BankEntity getBank() {
+        return bank;
     }
 
-    public void setBankId(Long bankId) {
-        this.bankId = bankId;
+    public void setBank(BankEntity bank) {
+        this.bank = bank;
     }
 
     public Long getCvv() {
@@ -235,7 +215,7 @@ public class CardEntity {
         if (agencyDigit != null ? !agencyDigit.equals(that.agencyDigit) : that.agencyDigit != null) return false;
         if (account != null ? !account.equals(that.account) : that.account != null) return false;
         if (accountDigit != null ? !accountDigit.equals(that.accountDigit) : that.accountDigit != null) return false;
-        if (bankId != null ? !bankId.equals(that.bankId) : that.bankId != null) return false;
+        if (bank != null ? !bank.equals(that.bank) : that.bank != null) return false;
         if (cvv != null ? !cvv.equals(that.cvv) : that.cvv != null) return false;
         if (function != null ? !function.equals(that.function) : that.function != null) return false;
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
@@ -258,7 +238,7 @@ public class CardEntity {
         result = 31 * result + (agencyDigit != null ? agencyDigit.hashCode() : 0);
         result = 31 * result + (account != null ? account.hashCode() : 0);
         result = 31 * result + (accountDigit != null ? accountDigit.hashCode() : 0);
-        result = 31 * result + (bankId != null ? bankId.hashCode() : 0);
+        result = 31 * result + (bank != null ? bank.hashCode() : 0);
         result = 31 * result + (cvv != null ? cvv.hashCode() : 0);
         result = 31 * result + (function != null ? function.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);

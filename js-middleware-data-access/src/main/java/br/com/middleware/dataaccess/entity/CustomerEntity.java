@@ -12,46 +12,37 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "customer", schema = "public", catalog = "js-middleware")
+@Table(name = "customer", catalog = "js-middleware")
 public class CustomerEntity {
 
     @Id
     @Column(name = "id", nullable = false, length = 255)
     private String id;
 
-    @Basic
     @Column(name = "name", nullable = false, length = 15)
     private String name;
 
-    @Basic
     @Column(name = "second_name", nullable = false, length = 100)
     private String secondName;
 
-    @Basic
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    @Basic
     @Column(name = "birthday", nullable = false)
     private Timestamp birthday;
 
-    @Basic
     @Column(name = "identification", nullable = false, length = 100)
     private String identification;
 
-    @Basic
     @Column(name = "identification_type", nullable = false, length = 15)
     private String identificationType;
 
-    @Basic
     @Column(name = "register_date", nullable = false)
     private Timestamp registerDate;
 
-    @Basic
     @Column(name = "update_date", nullable = true)
     private Timestamp updateDate;
 
-    @Basic
     @Column(name = "active", nullable = false)
     private Boolean active;
 

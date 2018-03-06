@@ -10,18 +10,16 @@ import javax.persistence.Table;
  * Created by zup134 on 27/02/18.
  */
 @Entity
-@Table(name = "city", schema = "public", catalog = "js-middleware")
+@Table(name = "city", catalog = "js-middleware")
 public class CityEntity {
 
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Basic
     @Column(name = "name", nullable = true, length = 120)
     private String name;
 
-    @Basic
     @Column(name = "state", nullable = true)
     private Long state;
 
