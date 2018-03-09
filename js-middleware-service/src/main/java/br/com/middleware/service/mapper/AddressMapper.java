@@ -4,8 +4,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-import br.com.middleware.api.address.viacep.response.ViaCepAddressResponse;
-import br.com.middleware.api.address.widenet.response.WideNetAddressResponse;
+import br.com.middleware.integration.api.address.viacep.response.ViaCepAddressResponse;
+import br.com.middleware.integration.api.address.widenet.response.WideNetAddressResponse;
 import br.com.middleware.model.BaseMapper;
 import br.com.middleware.model.to.AddressTO;
 

@@ -1,9 +1,9 @@
-package br.com.middleware.api.address.widenet;
+package br.com.middleware.integration.api.address.widenet;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.netflix.feign.FeignClient;
 
-import br.com.middleware.api.address.widenet.response.WideNetAddressResponse;
+import br.com.middleware.integration.api.address.widenet.response.WideNetAddressResponse;
 import feign.Param;
 import feign.RequestLine;
 

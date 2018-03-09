@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(basePackages = {
-        "br.com.middleware.api",
+        "br.com.middleware.integration.api",
         "br.com.middleware.service.mapper"
 })
 public class ServiceConfig {

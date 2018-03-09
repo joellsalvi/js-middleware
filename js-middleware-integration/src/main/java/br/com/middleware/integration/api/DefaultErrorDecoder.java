@@ -1,4 +1,4 @@
-package br.com.middleware.api;
+package br.com.middleware.integration.api;
 
 import org.apache.commons.lang3.StringUtils;
 

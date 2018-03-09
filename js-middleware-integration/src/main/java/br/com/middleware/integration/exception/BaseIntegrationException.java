@@ -1,4 +1,4 @@
-package br.com.middleware.exception;
+package br.com.middleware.integration.exception;
 
 import java.util.Optional;
 

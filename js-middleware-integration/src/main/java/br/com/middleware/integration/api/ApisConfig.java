@@ -1,4 +1,4 @@
-package br.com.middleware.api;
+package br.com.middleware.integration.api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

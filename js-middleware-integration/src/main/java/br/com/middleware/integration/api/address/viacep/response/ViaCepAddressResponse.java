@@ -1,4 +1,4 @@
-package br.com.middleware.api.address.viacep.response;
+package br.com.middleware.integration.api.address.viacep.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

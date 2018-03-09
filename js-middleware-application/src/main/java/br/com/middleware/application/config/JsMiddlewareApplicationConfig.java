@@ -1,13 +1,17 @@
 package br.com.middleware.application.config;
 
+import br.com.middleware.ws.interception.AuthorizationInterceptor;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +29,14 @@ import java.util.Locale;
 })
 @PropertySource("classpath:application.properties")
 public class JsMiddlewareApplicationConfig extends WebMvcConfigurerAdapter {
+
+    @Autowired
+    private AuthorizationInterceptor authorizationInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(authorizationInterceptor);
+    }
 
     @Bean
     public ResourceBundleMessageSource messageSource() {

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.middleware.api.address.viacep.ApiViaCep;
-import br.com.middleware.api.address.widenet.ApiWideNet;
+import br.com.middleware.integration.api.address.viacep.ApiViaCep;
+import br.com.middleware.integration.api.address.widenet.ApiWideNet;
 import br.com.middleware.dataaccess.repository.BankRepository;
 import br.com.middleware.model.process.Test;
 import br.com.middleware.model.to.AddressTO;

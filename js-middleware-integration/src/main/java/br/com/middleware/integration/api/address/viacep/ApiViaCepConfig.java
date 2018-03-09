@@ -1,4 +1,4 @@
-package br.com.middleware.api.address.viacep;
+package br.com.middleware.integration.api.address.viacep;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.middleware.api.DefaultErrorDecoder;
+import br.com.middleware.integration.api.DefaultErrorDecoder;
 import feign.Feign;
 import feign.Logger;
 import feign.jackson.JacksonDecoder;

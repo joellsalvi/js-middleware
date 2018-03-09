@@ -1,4 +1,4 @@
-package br.com.middleware.api;
+package br.com.middleware.integration.api;
 
 import java.io.IOException;
 
@@ -6,11 +6,11 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import br.com.middleware.exception.BadRequestIntegrationException;
-import br.com.middleware.exception.BusinessIntegrationException;
-import br.com.middleware.exception.NotFoundIntegrationException;
-import br.com.middleware.exception.UnauthorizedIntegrationException;
-import br.com.middleware.exception.UnexpectedIntegrationException;
+import br.com.middleware.integration.exception.BadRequestIntegrationException;
+import br.com.middleware.integration.exception.BusinessIntegrationException;
+import br.com.middleware.integration.exception.NotFoundIntegrationException;
+import br.com.middleware.integration.exception.UnauthorizedIntegrationException;
+import br.com.middleware.integration.exception.UnexpectedIntegrationException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 

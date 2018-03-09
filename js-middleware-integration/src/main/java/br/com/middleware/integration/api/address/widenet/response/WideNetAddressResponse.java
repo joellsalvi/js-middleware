@@ -1,4 +1,4 @@
-package br.com.middleware.api.address.widenet.response;
+package br.com.middleware.integration.api.address.widenet.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
