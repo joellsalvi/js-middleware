@@ -2,6 +2,7 @@ package br.com.middleware.ws;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.middleware.model.process.Test;
@@ -10,6 +11,8 @@ import br.com.middleware.ws.api.commons.HttpResponseWrapper;
 import br.com.middleware.service.api.ITestService;
 import br.com.middleware.ws.api.ITestController;
 import br.com.middleware.ws.api.response.TestResponse;
+
+import java.util.Map;
 
 /**
  * Created by joel on 31/01/18.
@@ -36,5 +39,18 @@ public class TestController implements ITestController {
     public HttpResponseWrapper<TestResponse> testViaCep(String cep, @RequestBody Test test) {
         TestResponse testResponse = testTOMapper.convertValue(testService.testViaCep(cep, test));
         return new HttpResponseWrapper(testResponse);
+    }
+
+    @Override
+    public String hello(Map<String, Object> model) {
+//        RelativisticModel.select();
+
+        String energy = System.getenv().get("ENERGY");
+        if (energy == null) {
+            energy = "12 GeV";
+        }
+
+        model.put("science", "E=mc^2: " + energy + " = " + energy.toString());
+        return "hello";
     }
 }

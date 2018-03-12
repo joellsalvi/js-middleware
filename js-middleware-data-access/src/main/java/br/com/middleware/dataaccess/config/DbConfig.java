@@ -1,16 +1,14 @@
 package br.com.middleware.dataaccess.config;
 
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
+import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
+import org.flywaydb.core.Flyway;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -20,7 +18,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * Created by zup134 on 23/02/18.
@@ -47,20 +46,33 @@ public class DbConfig {
             ds.setPassword(environment.getRequiredProperty("datasource.password"));
             ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
             return ds;
-//            ComboPooledDataSource ds = new ComboPooledDataSource();
-//            ds.setDriverClass(environment.getRequiredProperty("datasource.driver.classname"));
-//            ds.setJdbcUrl(getJdbcUrl());
-//            ds.setUser(environment.getRequiredProperty("datasource.username"));
-//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-//            ds.setMinPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.minSize")));
-//            ds.setMaxPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-//            ds.setAcquireIncrement(Integer.valueOf(environment.getRequiredProperty("datasource.pool.increment")));
-//            ds.setIdleConnectionTestPeriod(60);
-//            ds.setMaxStatements(100);
-//            return ds;
+//            HikariConfig config = new HikariConfig();
+//            config.addDataSourceProperty("useSSL", false);
+//            config.setJdbcUrl(getJdbcUrl());
+//            return new HikariDataSource(config);//HEROKU
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Bean(initMethod = "info")
+    public Flyway flyway() {
+        Flyway flyway = new Flyway();
+        flyway.setBaselineDescription("JS Middleware Base Version");
+        flyway.setBaselineVersionAsString("1");
+        flyway.setTable("flyway_schema_history");
+        flyway.setEncoding("UTF-8");
+        flyway.setBaselineOnMigrate(true);
+        flyway.setValidateOnMigrate(true);
+        flyway.setSqlMigrationPrefix("V");
+        flyway.setSqlMigrationSeparator("__");
+        flyway.setSqlMigrationSuffixes(".sql");
+        flyway.setOutOfOrder(false);
+        flyway.setIgnoreMissingMigrations(false);
+        flyway.setLocations("db/migration");
+        flyway.setSchemas("js-middleware");
+        flyway.setDataSource(dataSource());
+        return flyway;
     }
 
     @Bean
@@ -71,6 +83,7 @@ public class DbConfig {
     }
 
     @Bean
+    @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());

@@ -1,0 +1,1 @@
+web: java -jar js-middleware-application/target/js-middleware-application.jar
