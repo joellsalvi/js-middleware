@@ -33,6 +33,13 @@
             <artifactId>mapstruct-processor</artifactId>
         </dependency>
 
+        <dependency>
+            <artifactId>br.com</artifactId>
+            <groupId>middleware-context</groupId>
+            <scope>system</scope>
+            <systemPath>${basedir}/../libs/middleware-context-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>

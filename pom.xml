@@ -89,6 +89,13 @@
         </plugins>
     </build>
 
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>middleware-context</id>-->
+            <!--<url>file://libs/middleware-context-1.0-SNAPSHOT.jar</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+
     <dependencyManagement>
         <dependencies>
 
@@ -305,6 +312,13 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
                 <version>${flyway.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>br.com</artifactId>
+                <groupId>middleware-context</groupId>
+                <scope>system</scope>
+                <systemPath>${basedir}/libs/middleware-context-1.0-SNAPSHOT.jar</systemPath>
             </dependency>
 
         </dependencies>
