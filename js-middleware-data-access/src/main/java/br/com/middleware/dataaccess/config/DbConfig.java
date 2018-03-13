@@ -1,5 +1,6 @@
 package br.com.middleware.dataaccess.config;
 
+import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
@@ -42,7 +43,7 @@ public class DbConfig {
 
     @Bean
     public DataSource dataSource() {
-        try {
+        if (dbUrl == null || dbUrl.isEmpty()) {
             HikariDataSource ds = new HikariDataSource();
             ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
             ds.setJdbcUrl(getJdbcUrl());
@@ -50,18 +51,27 @@ public class DbConfig {
             ds.setPassword(environment.getRequiredProperty("datasource.password"));
             ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
             return ds;
-
-//            if (dbUrl == null || dbUrl.isEmpty()) {
-//                return new HikariDataSource();
-//            } else {
-//                HikariConfig config = new HikariConfig();
-//                config.setJdbcUrl(dbUrl);
-//                return new HikariDataSource(config);//HEROKU
-//            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } else {
+            HikariConfig config = new HikariConfig();
+            config.setJdbcUrl(dbUrl);
+            return new HikariDataSource(config);
         }
     }
+
+//    @Bean
+//    public DataSource dataSource() {
+//        try {
+//            HikariDataSource ds = new HikariDataSource();
+//            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+//            ds.setJdbcUrl(getJdbcUrl());
+//            ds.setUsername(environment.getRequiredProperty("datasource.username"));
+//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+//            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+//            return ds;
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     @Bean(initMethod = "info")
     public Flyway flyway() {
