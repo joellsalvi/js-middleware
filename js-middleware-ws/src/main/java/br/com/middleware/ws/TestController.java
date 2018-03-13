@@ -41,16 +41,4 @@ public class TestController implements ITestController {
         return new HttpResponseWrapper(testResponse);
     }
 
-    @Override
-    public String hello(Map<String, Object> model) {
-//        RelativisticModel.select();
-
-        String energy = System.getenv().get("ENERGY");
-        if (energy == null) {
-            energy = "12 GeV";
-        }
-
-        model.put("science", "E=mc^2: " + energy + " = " + energy.toString());
-        return "hello";
-    }
 }

@@ -29,7 +29,4 @@ public interface ITestController {
     @ResponseStatus(HttpStatus.OK)
     HttpResponseWrapper<TestResponse> testViaCep(@PathVariable("cep") String cep, @RequestBody Test test);
 
-    @RequestMapping("/hello")
-    String hello(Map<String, Object> model);
-
 }

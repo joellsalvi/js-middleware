@@ -1,6 +1,5 @@
 package br.com.middleware.dataaccess.config;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
@@ -38,6 +37,9 @@ public class DbConfig {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private DataSource dataSource;
 
     @Value("${spring.datasource.url}")
     private String dbUrl;
