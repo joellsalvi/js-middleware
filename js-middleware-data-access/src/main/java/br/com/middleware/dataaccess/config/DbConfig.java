@@ -1,6 +1,5 @@
 package br.com.middleware.dataaccess.config;
 
-import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
