@@ -1,10 +1,13 @@
 package br.com.middleware.dataaccess.config;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,20 +39,41 @@ public class DbConfig {
     @Autowired
     private Environment environment;
 
+    @Value("${spring.datasource.url}")
+    private String dbUrl;
+
     @Bean
     public DataSource dataSource() {
         try {
-            HikariDataSource ds = new HikariDataSource();
-            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
-            ds.setJdbcUrl(getJdbcUrl());
-            ds.setUsername(environment.getRequiredProperty("datasource.username"));
-            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-            return ds;
-//            HikariConfig config = new HikariConfig();
-//            config.addDataSourceProperty("useSSL", false);
-//            config.setJdbcUrl(getJdbcUrl());
-//            return new HikariDataSource(config);//HEROKU
+//            HikariDataSource ds = new HikariDataSource();
+//            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+//            ds.setJdbcUrl(getJdbcUrl());
+//            ds.setUsername(environment.getRequiredProperty("datasource.username"));
+//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+//            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+//            ds.addDataSourceProperty("ssl.mode", "disable");
+//            return ds;
+
+            if (dbUrl == null || dbUrl.isEmpty()) {
+                return new HikariDataSource();
+            } else {
+                HikariConfig config = new HikariConfig();
+                config.setJdbcUrl(dbUrl);
+                return new HikariDataSource(config);//HEROKU
+            }
+
+//            ComboPooledDataSource ds = new ComboPooledDataSource();
+//            ds.getProperties().setProperty("ssl.mode", "enable");
+//            ds.setDriverClass(environment.getRequiredProperty("datasource.driver.classname"));
+//            ds.setJdbcUrl(getJdbcUrl());
+//            ds.setUser(environment.getRequiredProperty("datasource.username"));
+//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+//            ds.setMinPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.minSize")));
+//            ds.setMaxPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+//            ds.setAcquireIncrement(Integer.valueOf(environment.getRequiredProperty("datasource.pool.increment")));
+//            ds.setIdleConnectionTestPeriod(60);
+//            ds.setMaxStatements(100);
+//            return ds;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -70,7 +94,7 @@ public class DbConfig {
         flyway.setOutOfOrder(false);
         flyway.setIgnoreMissingMigrations(false);
         flyway.setLocations("db/migration");
-        flyway.setSchemas("js-middleware");
+//        flyway.setSchemas("js-middleware");
         flyway.setDataSource(dataSource());
         return flyway;
     }
@@ -111,6 +135,14 @@ public class DbConfig {
             appender += "currentSchema=" + schema;
         }
 
+        Boolean sslmode = getSslMode();
+        if (sslmode) {
+            if(url.contains("currentSchema")) {
+                appender += "&";
+            }
+            appender += "sslmode=" + sslmode;
+        }
+
         if(!url.contains("?") && StringUtils.isNotBlank(appender)) {
             appender = "?".concat(appender);
         }
@@ -120,5 +152,9 @@ public class DbConfig {
 
     private String getDefaultSchema() {
         return environment.getRequiredProperty("spring.jpa.properties.hibernate.default_schema");
+    }
+
+    private Boolean getSslMode() {
+        return Boolean.valueOf(environment.getRequiredProperty("datasource.sslmode"));
     }
 }

@@ -46,6 +46,12 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <!-- C3P0 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
