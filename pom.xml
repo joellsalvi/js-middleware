@@ -60,8 +60,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
 
-        <c3p0.version>0.9.5.2</c3p0.version>
-
         <flyway.version>5.0.7</flyway.version>
     </properties>
 
@@ -297,13 +295,6 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
                 <version>${flyway.version}</version>
-            </dependency>
-
-            <!-- C3P0 -->
-            <dependency>
-                <groupId>com.mchange</groupId>
-                <artifactId>c3p0</artifactId>
-                <version>${c3p0.version}</version>
             </dependency>
 
         </dependencies>

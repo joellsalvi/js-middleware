@@ -38,44 +38,27 @@ public class DbConfig {
     @Autowired
     private Environment environment;
 
-    @Autowired
-    private DataSource dataSource;
-
     @Value("${spring.datasource.url}")
     private String dbUrl;
 
     @Bean
     public DataSource dataSource() {
         try {
-//            HikariDataSource ds = new HikariDataSource();
-//            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
-//            ds.setJdbcUrl(getJdbcUrl());
-//            ds.setUsername(environment.getRequiredProperty("datasource.username"));
-//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-//            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-//            ds.addDataSourceProperty("ssl.mode", "disable");
-//            return ds;
+            HikariDataSource ds = new HikariDataSource();
+            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+            ds.setJdbcUrl(getJdbcUrl());
+            ds.setUsername(environment.getRequiredProperty("datasource.username"));
+            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+            return ds;
 
-            if (dbUrl == null || dbUrl.isEmpty()) {
-                return new HikariDataSource();
-            } else {
-                HikariConfig config = new HikariConfig();
-                config.setJdbcUrl(dbUrl);
-                return new HikariDataSource(config);//HEROKU
-            }
-
-//            ComboPooledDataSource ds = new ComboPooledDataSource();
-//            ds.getProperties().setProperty("ssl.mode", "enable");
-//            ds.setDriverClass(environment.getRequiredProperty("datasource.driver.classname"));
-//            ds.setJdbcUrl(getJdbcUrl());
-//            ds.setUser(environment.getRequiredProperty("datasource.username"));
-//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-//            ds.setMinPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.minSize")));
-//            ds.setMaxPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-//            ds.setAcquireIncrement(Integer.valueOf(environment.getRequiredProperty("datasource.pool.increment")));
-//            ds.setIdleConnectionTestPeriod(60);
-//            ds.setMaxStatements(100);
-//            return ds;
+//            if (dbUrl == null || dbUrl.isEmpty()) {
+//                return new HikariDataSource();
+//            } else {
+//                HikariConfig config = new HikariConfig();
+//                config.setJdbcUrl(dbUrl);
+//                return new HikariDataSource(config);//HEROKU
+//            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
