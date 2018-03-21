@@ -41,26 +41,14 @@ public class DbConfig {
     @Value("${spring.datasource.url}")
     private String dbUrl;
 
-    @Bean
-    public DataSource dataSource() {
-        if (dbUrl == null || dbUrl.isEmpty()) {
-            HikariDataSource ds = new HikariDataSource();
-            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
-            ds.setJdbcUrl(getJdbcUrl());
-            ds.setUsername(environment.getRequiredProperty("datasource.username"));
-            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-            return ds;
-        } else {
-            HikariConfig config = new HikariConfig();
-            config.setJdbcUrl(dbUrl);
-            return new HikariDataSource(config);
-        }
-    }
-
+    /**
+     * HEROKU DATASOURCE
+     *
+     * @return
+     */
 //    @Bean
 //    public DataSource dataSource() {
-//        try {
+//        if (dbUrl == null || dbUrl.isEmpty()) {
 //            HikariDataSource ds = new HikariDataSource();
 //            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
 //            ds.setJdbcUrl(getJdbcUrl());
@@ -68,10 +56,32 @@ public class DbConfig {
 //            ds.setPassword(environment.getRequiredProperty("datasource.password"));
 //            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
 //            return ds;
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
+//        } else {
+//            HikariConfig config = new HikariConfig();
+//            config.setJdbcUrl(dbUrl);
+//            return new HikariDataSource(config);
 //        }
 //    }
+
+    /**
+     * LOCAL DATASOURCE
+     *
+     * @return
+     */
+    @Bean
+    public DataSource dataSource() {
+        try {
+            HikariDataSource ds = new HikariDataSource();
+            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+            ds.setJdbcUrl(getJdbcUrl());
+            ds.setUsername(environment.getRequiredProperty("datasource.username"));
+            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+            return ds;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Bean(initMethod = "info")
     public Flyway flyway() {
@@ -88,7 +98,7 @@ public class DbConfig {
         flyway.setOutOfOrder(false);
         flyway.setIgnoreMissingMigrations(false);
         flyway.setLocations("db/migration");
-//        flyway.setSchemas("js-middleware");
+        flyway.setSchemas("js-middleware");//FIXME COMENTAR ESSA LINHA CASO USAR DATASOURCE DO HEROKU<<<<<<<<<<<<<<<
         flyway.setDataSource(dataSource());
         return flyway;
     }
