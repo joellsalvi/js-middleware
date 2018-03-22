@@ -25,13 +25,13 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
         String applicationId = request.getHeader(X_APPLICATION_ID);
         String customerId = request.getHeader(X_CUSTOMER_ID);
 
-        if (StringUtils.isBlank(organizationSlug)) {
-            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
-        }
-
-        if (StringUtils.isBlank(applicationId)) {
-            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
-        }
+//        if (StringUtils.isBlank(organizationSlug)) {
+//            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
+//        }
+//
+//        if (StringUtils.isBlank(applicationId)) {
+//            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
+//        }
 
         // ORGANIZATION_SLUG identificará qual cliente/organização está usando o aplicativo.
         // APPLICATION_ID identificará qual aplicação está efetuando a requisção.
