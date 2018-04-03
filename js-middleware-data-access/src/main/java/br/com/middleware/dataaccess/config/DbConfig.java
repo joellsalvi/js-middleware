@@ -84,7 +84,7 @@ public class DbConfig {
 //        }
 //    }
 
-    @Bean(initMethod = "info")
+    @Bean(initMethod = "migrate")
     public Flyway flyway() {
         Flyway flyway = new Flyway();
         flyway.setBaselineDescription("JS Middleware Base Version");
@@ -99,8 +99,8 @@ public class DbConfig {
         flyway.setOutOfOrder(false);
         flyway.setIgnoreMissingMigrations(false);
         flyway.setLocations("db/migration");
-//        flyway.setSchemas("js-middleware");//FIXME COMENTAR ESSA LINHA CASO USAR DATASOURCE DO HEROKU<<<<<<<<<<<<<<<
-        flyway.setDataSource(dataSource());
+//        flyway.setSchemas(this.getDefaultSchema());//FIXME COMENTAR ESSA LINHA CASO USAR DATASOURCE DO HEROKU<<<<<<<<<<<<<<<
+        flyway.setDataSource(this.dataSource());
         return flyway;
     }
 
@@ -115,7 +115,7 @@ public class DbConfig {
     @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
+        entityManagerFactoryBean.setDataSource(this.dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         entityManagerFactoryBean.setPackagesToScan(new String[]{"br.com.middleware.dataaccess.entity"});
         entityManagerFactoryBean.setJpaProperties(hibernateProperties());
