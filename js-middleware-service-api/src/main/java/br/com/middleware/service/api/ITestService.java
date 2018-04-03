@@ -1,6 +1,7 @@
 package br.com.middleware.service.api;
 
 import br.com.middleware.model.process.Test;
+import br.com.middleware.model.to.AddressTO;
 import br.com.middleware.model.to.TestTO;
 
 /**
@@ -12,4 +13,5 @@ public interface ITestService {
 
     TestTO testViaCep(String cep, Test test);
 
+    AddressTO getAddress(String cep);
 }

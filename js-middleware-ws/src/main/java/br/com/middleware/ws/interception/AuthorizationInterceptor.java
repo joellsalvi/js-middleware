@@ -33,8 +33,8 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 //            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
 //        }
 
-        // ORGANIZATION_SLUG identificará qual cliente/organização está usando o aplicativo.
-        // APPLICATION_ID identificará qual aplicação está efetuando a requisção.
+//         ORGANIZATION_SLUG identificará qual cliente/organização está usando o aplicativo.
+//         APPLICATION_ID identificará qual aplicação está efetuando a requisção.
 
         ApplicationContextHolder.getContext().setOrganization(organizationSlug);
         ApplicationContextHolder.getContext().setApplication(applicationId);

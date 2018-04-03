@@ -49,13 +49,14 @@ public class DbConfig {
     @Bean
     public DataSource dataSource() {
         if (dbUrl == null || dbUrl.isEmpty()) {
-            HikariDataSource ds = new HikariDataSource();
-            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
-            ds.setJdbcUrl(getJdbcUrl());
-            ds.setUsername(environment.getRequiredProperty("datasource.username"));
-            ds.setPassword(environment.getRequiredProperty("datasource.password"));
-            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
-            return ds;
+            throw new RuntimeException("DataSource não configurado!");
+//            HikariDataSource ds = new HikariDataSource();
+//            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+//            ds.setJdbcUrl(getJdbcUrl());
+//            ds.setUsername(environment.getRequiredProperty("datasource.username"));
+//            ds.setPassword(environment.getRequiredProperty("datasource.password"));
+//            ds.setMaximumPoolSize(Integer.valueOf(environment.getRequiredProperty("datasource.pool.maxSize")));
+//            return ds;
         } else {
             HikariConfig config = new HikariConfig();
             config.setJdbcUrl(dbUrl);

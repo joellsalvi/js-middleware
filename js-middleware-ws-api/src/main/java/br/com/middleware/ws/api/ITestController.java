@@ -22,4 +22,8 @@ public interface ITestController {
     @ResponseStatus(HttpStatus.OK)
     HttpResponseWrapper<TestResponse> testViaCep(@PathVariable("cep") String cep, @RequestBody Test test);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/widenet/{cep}")
+    @ResponseStatus(HttpStatus.OK)
+    HttpResponseWrapper<TestResponse> getAddress(@PathVariable("cep") String cep);
+
 }

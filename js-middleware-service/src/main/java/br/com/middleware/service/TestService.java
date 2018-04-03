@@ -50,4 +50,9 @@ public class TestService implements ITestService {
         return testMapper.convertValue(test, addressTO);
     }
 
+    @Override
+    public AddressTO getAddress(String cep) {
+        return addressMapper.from(apiWideNet.getAddressByCep(cep));
+    }
+
 }
