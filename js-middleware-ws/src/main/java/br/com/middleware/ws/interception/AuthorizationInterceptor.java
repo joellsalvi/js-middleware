@@ -21,9 +21,9 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
 
-        String organizationSlug = request.getHeader(X_ORGANIZATION_SLUG);
-        String applicationId = request.getHeader(X_APPLICATION_ID);
-        String customerId = request.getHeader(X_CUSTOMER_ID);
+//        String organizationSlug = request.getHeader(X_ORGANIZATION_SLUG);
+//        String applicationId = request.getHeader(X_APPLICATION_ID);
+//        String customerId = request.getHeader(X_CUSTOMER_ID);
 
 //        if (StringUtils.isBlank(organizationSlug)) {
 //            throw new ValidationException(INVALID_TENANT_HEADERS_MESSAGE);
@@ -36,9 +36,9 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
 //         ORGANIZATION_SLUG identificará qual cliente/organização está usando o aplicativo.
 //         APPLICATION_ID identificará qual aplicação está efetuando a requisção.
 
-        ApplicationContextHolder.getContext().setOrganization(organizationSlug);
-        ApplicationContextHolder.getContext().setApplication(applicationId);
-        ApplicationContextHolder.getContext().getCustom().put(X_CUSTOMER_ID, customerId);
+//        ApplicationContextHolder.getContext().setOrganization(organizationSlug);
+//        ApplicationContextHolder.getContext().setApplication(applicationId);
+//        ApplicationContextHolder.getContext().getCustom().put(X_CUSTOMER_ID, customerId);
 
         return super.preHandle(request, response, handler);
     }
