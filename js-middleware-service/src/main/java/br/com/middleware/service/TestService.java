@@ -1,5 +1,6 @@
 package br.com.middleware.service;
 
+import br.com.middleware.dataaccess.entity.BankEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,8 @@ import br.com.middleware.model.to.TestTO;
 import br.com.middleware.service.api.ITestService;
 import br.com.middleware.service.mapper.AddressMapper;
 import br.com.middleware.service.mapper.TestMapper;
+
+import java.util.List;
 
 /**
  * Created by joel on 31/01/18.
@@ -52,6 +55,10 @@ public class TestService implements ITestService {
 
     @Override
     public AddressTO getAddress(String cep) {
+        List<BankEntity> bankList = bankRepository.findAll();
+        bankList.forEach(b -> System.out.println(b.toString()));
+
+
         return addressMapper.from(apiWideNet.getAddressByCep(cep));
     }
 
