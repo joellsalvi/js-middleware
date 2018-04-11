@@ -2,9 +2,12 @@ package br.com.middleware.ws.api;
 
 import br.com.middleware.model.process.Test;
 import br.com.middleware.ws.api.commons.HttpResponseWrapper;
+import br.com.middleware.ws.api.response.BankResponse;
 import br.com.middleware.ws.api.response.TestResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by joel on 31/01/18.
@@ -22,8 +25,8 @@ public interface ITestController {
     @ResponseStatus(HttpStatus.OK)
     HttpResponseWrapper<TestResponse> testViaCep(@PathVariable("cep") String cep, @RequestBody Test test);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/widenet/{cep}")
+    @RequestMapping(method = RequestMethod.POST, value = "/banks")
     @ResponseStatus(HttpStatus.OK)
-    HttpResponseWrapper<TestResponse> getAddress(@PathVariable("cep") String cep);
+    HttpResponseWrapper<List<BankResponse>> getBanks();
 
 }

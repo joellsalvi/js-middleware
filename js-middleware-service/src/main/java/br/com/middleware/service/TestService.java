@@ -1,21 +1,23 @@
 package br.com.middleware.service;
 
-import br.com.middleware.dataaccess.entity.BankEntity;
+import br.com.middleware.dataaccess.repository.BankRepository;
+import br.com.middleware.integration.api.address.viacep.ApiViaCep;
+import br.com.middleware.integration.api.address.widenet.ApiWideNet;
+import br.com.middleware.model.process.Test;
+import br.com.middleware.model.to.AddressTO;
+import br.com.middleware.model.to.BankTO;
+import br.com.middleware.model.to.TestTO;
+import br.com.middleware.service.api.ITestService;
+import br.com.middleware.service.mapper.AddressMapper;
+import br.com.middleware.service.mapper.BankMapper;
+import br.com.middleware.service.mapper.TestMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.middleware.integration.api.address.viacep.ApiViaCep;
-import br.com.middleware.integration.api.address.widenet.ApiWideNet;
-import br.com.middleware.dataaccess.repository.BankRepository;
-import br.com.middleware.model.process.Test;
-import br.com.middleware.model.to.AddressTO;
-import br.com.middleware.model.to.TestTO;
-import br.com.middleware.service.api.ITestService;
-import br.com.middleware.service.mapper.AddressMapper;
-import br.com.middleware.service.mapper.TestMapper;
-
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by joel on 31/01/18.
@@ -26,18 +28,20 @@ public class TestService implements ITestService {
 
     private TestMapper testMapper;
     private AddressMapper addressMapper;
+    private BankMapper bankMapper;
     private ApiWideNet apiWideNet;
     private ApiViaCep apiViaCep;
     private BankRepository bankRepository;
 
     @Autowired
     public TestService(TestMapper testMapper, AddressMapper addressMapper, ApiWideNet apiWideNet, ApiViaCep apiViaCep,
-            BankRepository bankRepository) {
+            BankRepository bankRepository, BankMapper bankMapper) {
         this.testMapper = testMapper;
         this.addressMapper = addressMapper;
         this.apiWideNet = apiWideNet;
         this.apiViaCep = apiViaCep;
         this.bankRepository = bankRepository;
+        this.bankMapper = bankMapper;
     }
 
     @Override
@@ -54,12 +58,17 @@ public class TestService implements ITestService {
     }
 
     @Override
-    public AddressTO getAddress(String cep) {
-        List<BankEntity> bankList = bankRepository.findAll();
-        bankList.forEach(b -> System.out.println(b.toString()));
+    public List<BankTO> getBanks() {
 
+        BankTO bankTO = new BankTO();
+        int code = ThreadLocalRandom.current().nextInt(0, 9 + 1);
+        bankTO.setCode("999" + code);
+        bankTO.setName("Teste" + code);
+        bankTO.setType(String.valueOf(code));
 
-        return addressMapper.from(apiWideNet.getAddressByCep(cep));
+        bankRepository.save(bankMapper.toEntity(bankTO));
+
+        return bankMapper.fromEntity(bankRepository.findAll());
     }
 
 }

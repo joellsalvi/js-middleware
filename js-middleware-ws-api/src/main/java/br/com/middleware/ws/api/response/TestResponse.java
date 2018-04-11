@@ -19,9 +19,6 @@ public class TestResponse {
     private LocalDateTime birthday;
     private AddressTO address;
 
-    public TestResponse() {
-    }
-
     public Long getId() {
         return id;
     }
