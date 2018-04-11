@@ -49,7 +49,7 @@
 
         <hibernate.version>5.2.13.Final</hibernate.version>
         <postgresql.version>9.4.1212</postgresql.version>
-        <hikaricp.version>2.7.8</hikaricp.version>
+        <hikaricp.version>2.6.0</hikaricp.version>
 
         <resource.directory>src/main/resources</resource.directory>
 
