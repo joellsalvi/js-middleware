@@ -52,7 +52,7 @@ public class DbConfig {
      * @return
      */
     @Bean
-    public DataSource dataSource() throws SQLException {
+    public DataSource dataSource() throws SQLException, ClassNotFoundException {
         if (dbUrl == null || dbUrl.isEmpty()) {
             LOGGER.error("DataSource não configurado!");
             return new HikariDataSource();
@@ -65,8 +65,8 @@ public class DbConfig {
 //            return ds;
         } else {
             HikariConfig config = new HikariConfig();
+            Class.forName("org.postgresql.Driver");
             config.setJdbcUrl(dbUrl);
-            config.setDataSourceClassName(environment.getRequiredProperty("datasource.driver.classname"));
             return new HikariDataSource(config);
         }
     }
