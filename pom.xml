@@ -48,7 +48,7 @@
         <reactivex.rxjava.version>1.1.5</reactivex.rxjava.version>
 
         <hibernate.version>5.2.13.Final</hibernate.version>
-        <postgresql.version>9.4.1212.jre7</postgresql.version>
+        <postgresql.version>9.4.1212</postgresql.version>
         <hikaricp.version>2.7.8</hikaricp.version>
 
         <resource.directory>src/main/resources</resource.directory>
