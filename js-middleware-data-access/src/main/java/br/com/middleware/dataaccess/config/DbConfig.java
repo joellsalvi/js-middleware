@@ -53,6 +53,7 @@ public class DbConfig {
      */
     @Bean
     public DataSource dataSource() throws SQLException, ClassNotFoundException {
+        LOGGER.info("URL: " + dbUrl);
         if (dbUrl == null || dbUrl.isEmpty()) {
             LOGGER.error("DataSource não configurado!");
             return new HikariDataSource();
