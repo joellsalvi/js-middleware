@@ -66,7 +66,7 @@ public class DbConfig {
         } else {
             HikariConfig config = new HikariConfig();
             config.setJdbcUrl(dbUrl);
-            config.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
+            config.setDataSourceClassName(environment.getRequiredProperty("datasource.driver.classname"));
             return new HikariDataSource(config);
         }
     }
