@@ -23,6 +23,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Properties;
 
 /**
@@ -51,7 +52,7 @@ public class DbConfig {
      * @return
      */
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource() throws SQLException {
         if (dbUrl == null || dbUrl.isEmpty()) {
             LOGGER.error("DataSource não configurado!");
             return new HikariDataSource();
@@ -90,7 +91,7 @@ public class DbConfig {
 //    }
 
     @Bean(initMethod = "migrate")
-    public Flyway flyway() {
+    public Flyway flyway() throws SQLException {
         Flyway flyway = new Flyway();
         flyway.setBaselineDescription("JS Middleware Base Version");
         flyway.setBaselineVersionAsString("1");
@@ -110,7 +111,7 @@ public class DbConfig {
     }
 
     @Bean
-    public JpaTransactionManager transactionManager() {
+    public JpaTransactionManager transactionManager() throws SQLException {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
@@ -118,7 +119,7 @@ public class DbConfig {
 
     @Bean
     @DependsOn("flyway")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws SQLException {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(this.dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
