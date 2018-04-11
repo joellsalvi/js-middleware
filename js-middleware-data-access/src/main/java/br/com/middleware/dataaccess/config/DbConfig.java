@@ -46,12 +46,13 @@ public class DbConfig {
     @Value("${spring.datasource.url}")
     private String dbUrl;
 
+    //FIXME PASSAR TUDO PARA PROPERTIES
+
     /**
      * HEROKU DATASOURCE
      *
      * @return
      */
-    @Bean
     public DataSource dataSource() throws SQLException, ClassNotFoundException {
         LOGGER.info("URL: " + dbUrl);
         if (dbUrl == null || dbUrl.isEmpty()) {
@@ -108,19 +109,19 @@ public class DbConfig {
         flyway.setIgnoreMissingMigrations(false);
         flyway.setLocations("db/migration");
 //        flyway.setSchemas(this.getDefaultSchema());//FIXME COMENTAR ESSA LINHA CASO USAR DATASOURCE DO HEROKU<<<<<<<<<<<<<<<
-        flyway.setDataSource(this.dataSource());
+//        flyway.setDataSource(this.dataSource());
         return flyway;
     }
 
-    @Bean
+    //@Bean
     public JpaTransactionManager transactionManager() throws SQLException, ClassNotFoundException {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
     }
 
-    @Bean
-    @DependsOn("flyway")
+    //@Bean
+    //@DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws SQLException, ClassNotFoundException {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(this.dataSource());
