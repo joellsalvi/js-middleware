@@ -92,7 +92,7 @@ public class DbConfig {
 //    }
 
     @Bean(initMethod = "migrate")
-    public Flyway flyway() throws SQLException {
+    public Flyway flyway() throws SQLException, ClassNotFoundException {
         Flyway flyway = new Flyway();
         flyway.setBaselineDescription("JS Middleware Base Version");
         flyway.setBaselineVersionAsString("1");
@@ -112,7 +112,7 @@ public class DbConfig {
     }
 
     @Bean
-    public JpaTransactionManager transactionManager() throws SQLException {
+    public JpaTransactionManager transactionManager() throws SQLException, ClassNotFoundException {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
@@ -120,7 +120,7 @@ public class DbConfig {
 
     @Bean
     @DependsOn("flyway")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws SQLException {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws SQLException, ClassNotFoundException {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(this.dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
