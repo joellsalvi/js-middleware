@@ -5,6 +5,8 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -35,6 +37,8 @@ import java.util.Properties;
 @PropertySource("classpath:data-access.properties")
 public class DbConfig {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(DbConfig.class);
+
     @Autowired
     private Environment environment;
 
@@ -49,7 +53,8 @@ public class DbConfig {
     @Bean
     public DataSource dataSource() {
         if (dbUrl == null || dbUrl.isEmpty()) {
-            throw new RuntimeException("DataSource não configurado!");
+            LOGGER.error("DataSource não configurado!");
+            return new HikariDataSource();
 //            HikariDataSource ds = new HikariDataSource();
 //            ds.setDriverClassName(environment.getRequiredProperty("datasource.driver.classname"));
 //            ds.setJdbcUrl(getJdbcUrl());
