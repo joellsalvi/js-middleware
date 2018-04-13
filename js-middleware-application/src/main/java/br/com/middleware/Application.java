@@ -1,4 +1,4 @@
-package br.com.middleware.application;
+package br.com.middleware;
 
 import br.com.middleware.dataaccess.config.DbConfig;
 import org.springframework.boot.SpringApplication;

@@ -53,6 +53,7 @@ public class TestService implements ITestService {
 
     @Override
     public TestTO testViaCep(String cep, Test test) {
+        bankRepository.findAll().forEach(b -> System.out.println(b.toString()));
         AddressTO addressTO = addressMapper.from(apiViaCep.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);
     }

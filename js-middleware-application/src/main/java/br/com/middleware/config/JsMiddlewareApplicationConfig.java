@@ -1,4 +1,4 @@
-package br.com.middleware.application.config;
+package br.com.middleware.config;
 
 import br.com.middleware.ws.interception.AuthorizationInterceptor;
 import org.apache.commons.lang3.StringUtils;

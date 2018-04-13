@@ -1,6 +1,6 @@
-package br.com.test.middleware.controller;
+package br.com.middleware.test.controller;
 
-import br.com.middleware.application.Application;
+import br.com.middleware.Application;
 import br.com.middleware.ws.api.ITestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;

@@ -1,5 +1,6 @@
 package br.com.middleware.integration.api.address.viacep;
 
+import br.com.middleware.integration.api.logger.JMSlf4jLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -31,6 +32,7 @@ public class ApiViaCepConfig {
                 .encoder(new JacksonEncoder(objectMapper))
                 .decoder(new JacksonDecoder(objectMapper))
                 .errorDecoder(new DefaultErrorDecoder("ViaCep"))
+                .logger(new JMSlf4jLogger(this.getClass()))
                 .logLevel(Logger.Level.FULL)
                 .target(ApiViaCep.class, urlApiViaCep);
     }

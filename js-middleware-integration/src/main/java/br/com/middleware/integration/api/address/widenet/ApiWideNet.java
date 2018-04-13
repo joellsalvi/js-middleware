@@ -10,7 +10,7 @@ import feign.RequestLine;
 /**
  * Created by zup134 on 05/02/18.
  */
-@FeignClient("${widenet-busca-cep-url}")
+@FeignClient(name = "ApiWideNet")//("${widenet-busca-cep-url}")
 @Qualifier("ApiWideNet")
 public interface ApiWideNet {
 
