@@ -15,7 +15,7 @@ import feign.jackson.JacksonEncoder;
 import feign.okhttp.OkHttpClient;
 
 /**
- * Created by zup134 on 07/02/18.
+ * Created by Joel on 07/02/18.
  */
 @Configuration
 public class ApiWideNetConfig {

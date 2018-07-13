@@ -3,7 +3,7 @@ package br.com.middleware.integration.api.address.widenet.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * Created by zup134 on 05/02/18.
+ * Created by Joel on 05/02/18.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WideNetAddressResponse {

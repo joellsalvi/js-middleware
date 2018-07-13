@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by zup134 on 27/02/18.
+ * Created by Joel on 27/02/18.
  */
 @Entity
 @Table(name = "card", catalog = "js-middleware")

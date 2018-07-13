@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import feign.Contract;
 
 /**
- * Created by zup134 on 08/02/18.
+ * Created by Joel on 08/02/18.
  */
 @Configuration
 @PropertySource("classpath:integration.properties")

@@ -1,7 +1,7 @@
 package br.com.middleware.model.to;
 
 /**
- * Created by zup134 on 05/02/18.
+ * Created by Joel on 05/02/18.
  */
 public class AddressTO {
 

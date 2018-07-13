@@ -3,7 +3,7 @@ package br.com.middleware.integration.api.address.viacep.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created by zup134 on 08/02/18.
+ * Created by Joel on 08/02/18.
  */
 public class ViaCepAddressResponse {
 

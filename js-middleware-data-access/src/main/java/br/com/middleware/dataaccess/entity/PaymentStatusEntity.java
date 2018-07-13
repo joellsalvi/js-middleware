@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Created by zup134 on 27/02/18.
+ * Created by Joel on 27/02/18.
  */
 @Entity
 @Table(name = "payment_status", catalog = "js-middleware")

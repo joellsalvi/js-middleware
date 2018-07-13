@@ -10,7 +10,7 @@ import br.com.middleware.model.BaseMapper;
 import br.com.middleware.model.to.AddressTO;
 
 /**
- * Created by zup134 on 05/02/18.
+ * Created by Joel on 05/02/18.
  */
 @Mapper(componentModel = "spring")
 public interface AddressMapper extends BaseMapper {

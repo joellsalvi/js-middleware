@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.middleware.dataaccess.entity.BankEntity;
 
 /**
- * Created by zup134 on 23/02/18.
+ * Created by Joel on 23/02/18.
  */
 @Repository
 public interface BankRepository extends JpaRepository<BankEntity, Long> {
