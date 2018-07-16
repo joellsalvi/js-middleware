@@ -15,7 +15,7 @@ import br.com.middleware.ws.api.response.TestResponse;
 import java.util.Map;
 
 /**
- * Created by joel on 31/01/18.
+ * Created by Joel on 31/01/18.
  */
 @RestController
 public class TestController implements ITestController {

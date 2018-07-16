@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import br.com.middleware.model.to.AddressTO;
 
 /**
- * Created by joel on 31/01/18.
+ * Created by Joel on 31/01/18.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TestResponse {

@@ -15,7 +15,7 @@ import br.com.middleware.service.mapper.AddressMapper;
 import br.com.middleware.service.mapper.TestMapper;
 
 /**
- * Created by joel on 31/01/18.
+ * Created by Joel on 31/01/18.
  */
 @Service
 @Transactional
@@ -39,6 +39,7 @@ public class TestService implements ITestService {
 
     @Override
     public TestTO testWideNet(String cep, Test test) {
+        //TODO Criar arquivo de log
         bankRepository.findAll().forEach(b -> System.out.println(b.toString()));
         AddressTO addressTO = addressMapper.from(apiWideNet.getAddressByCep(cep));
         return testMapper.convertValue(test, addressTO);

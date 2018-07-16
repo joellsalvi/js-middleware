@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by joel on 02/02/18.
+ * Created by Joel on 02/02/18.
  */
 @Configuration
 @ComponentScan(basePackages = {

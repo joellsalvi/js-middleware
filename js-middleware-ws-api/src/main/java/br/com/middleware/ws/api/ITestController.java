@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by joel on 31/01/18.
+ * Created by Joel on 31/01/18.
  */
 @RequestMapping("/test")
 public interface ITestController {

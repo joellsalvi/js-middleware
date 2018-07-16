@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 
 /**
- * Created by joel on 31/01/18.
+ * Created by Joel on 31/01/18.
  */
 @SpringBootApplication
 @EnableFeignClients

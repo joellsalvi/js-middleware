@@ -9,7 +9,7 @@ import br.com.middleware.model.to.AddressTO;
 import br.com.middleware.model.to.TestTO;
 
 /**
- * Created by joel on 02/02/18.
+ * Created by Joel on 02/02/18.
  */
 @Mapper(componentModel = "spring")
 public abstract class TestMapper implements BaseMapper {

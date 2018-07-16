@@ -8,7 +8,7 @@ import br.com.middleware.model.to.TestTO;
 import br.com.middleware.ws.api.response.TestResponse;
 
 /**
- * Created by joel on 02/02/18.
+ * Created by Joel on 02/02/18.
  */
 @Mapper(componentModel = "spring")
 public abstract class TestTOMapper implements BaseMapper {
