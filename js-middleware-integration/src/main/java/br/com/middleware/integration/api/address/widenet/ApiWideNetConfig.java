@@ -30,7 +30,7 @@ public class ApiWideNetConfig {
                 .client(new OkHttpClient())
                 .encoder(new JacksonEncoder(objectMapper))
                 .decoder(new JacksonDecoder(objectMapper))
-                .errorDecoder(new DefaultErrorDecoder("ViaCep"))
+                .errorDecoder(new DefaultErrorDecoder("WideNet"))
                 .logLevel(Logger.Level.FULL)
                 .target(ApiWideNet.class, urlApiWideNet);
     }
